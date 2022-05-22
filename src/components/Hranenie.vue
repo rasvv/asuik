@@ -39,21 +39,32 @@
       </v-row>
     </div>
     <Line_three :hranenie="hranenie[0]" />
-    <Line_three />
+    <Line_two :hranenie="hranenie[1]" />
+    <Line_one :hranenie="hranenie[2]" />
+    <Line_one :hranenie="hranenie[3]" />
+    <Line_one :hranenie="hranenie[4]" />
+    <Line_one :hranenie="hranenie[5]" />
+    <Line_one :hranenie="hranenie[6]" />
   </div>
 </template>
 
 <script>
 import Line_three from './Lines/Line_three.vue';
+import Line_two from './Lines/Line_two.vue';
+import Line_one from './Lines/Line_one.vue';
 
 export default {
   name: 'hranenie-view',
   components: {
+    Line_one,
+    Line_two,
     Line_three
   },
   data() {
     return {
       hranenie: [],
+      mainlineheight: 25,
+      lineheight: 20,      
     };
   },
   methods: {
@@ -88,8 +99,8 @@ a {
 }
 
 :root {
-  --main-line-height: 25px;
-  --line-height: 20px;
+	--main-line-height: 40px;
+	--line-height: 30px;
 }
 
 .table__header {

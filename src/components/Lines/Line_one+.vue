@@ -3,82 +3,79 @@
 		<div class="table__line">
 			<v-row no-gutters>
 				<v-col cols="2" class="header header3">
-					<!-- ХТО -->
-					<!-- <<hranenie.name>> -->
-					{{ hranenie.name }}
+					ХТО
 				</v-col>
 				<v-col cols="1" class="header header3">
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{ hranenie.category[0].cat }}
-							<!-- ВАО -->
+							ВАО
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{ hranenie.category[1].cat }}
+							САО
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{ hranenie.category[2].cat }}
-						</v-col>
-					</v-row>
-				</v-col>
-				<v-col cols="2" class="header header3">
-					{{ hranenie.proectvalue }}
-				</v-col>
-				<v-col cols="2" class="header header3">
-					<v-row class="header header1" no-gutters>
-						<v-col cols="12">
-							{{ hranenie.category[0].proect }}
-						</v-col>
-					</v-row>
-					<v-row class="header header1" no-gutters>
-						<v-col cols="12">
-							{{ hranenie.category[1].proect }}
-						</v-col>
-					</v-row>
-					<v-row class="header header1" no-gutters>
-						<v-col cols="12">
-							{{ hranenie.category[2].proect }}
+							НАО
 						</v-col>
 					</v-row>
 				</v-col>
 				<v-col cols="2" class="header header3">
+					5760
+				</v-col>
+				<v-col cols="2" class="header header3">
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{ hranenie.category[0].put }}
+							1880
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{ hranenie.category[1].put }}
+							1880
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{ hranenie.category[2].put }}
+							2000
+						</v-col>
+					</v-row>
+				</v-col>
+				<v-col cols="2" class="header header3">
+					<v-row class="header header1" no-gutters>
+						<v-col cols="12">
+							1880
+						</v-col>
+					</v-row>
+					<v-row class="header header1" no-gutters>
+						<v-col cols="12">
+							1880
+						</v-col>
+					</v-row>
+					<v-row class="header header1" no-gutters>
+						<v-col cols="12">
+							2000
 						</v-col>
 					</v-row>
 				</v-col>
 				<v-col cols="1" class="header header3">
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{per1}}
-							<v-progress-linear class="mbb" color="red" :value=this.per1></v-progress-linear>
+							100
+							<v-progress-linear class="mbb" color="red" value="100"></v-progress-linear>
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{per2}}
-							<v-progress-linear class="mbb" color="red" :value=this.per2></v-progress-linear>
+							100
+							<v-progress-linear class="mbb" color="red" value="100"></v-progress-linear>
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{per3}}
-							<v-progress-linear class="mbb" color="red" :value=this.per3></v-progress-linear>
+							100
+							<v-progress-linear class="mbb" color="red" value="100"></v-progress-linear>
 						</v-col>
 					</v-row>
 				</v-col>
@@ -86,17 +83,17 @@
 				<v-col cols="2" class="header header3">
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{raz1}}
+							0
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{raz2}}
+							0
 						</v-col>
 					</v-row>
 					<v-row class="header header1" no-gutters>
 						<v-col cols="12">
-							{{raz3}}
+							0
 						</v-col>
 					</v-row>
 				</v-col>
@@ -108,37 +105,66 @@
 
 <script>
 export default {
-	name: 'line-three',
-	props: ['hranenie'],
-	methods: {
-		percent(val1, val2) {
-			return((100*val2/val1).toFixed(2))
-		}
-	},
-	computed: {
-		per1() {
-			return this.percent(this.hranenie.category[0].proect, this.hranenie.category[0].put)
-		},
-		per2() {
-			return this.percent(this.hranenie.category[1].proect, this.hranenie.category[1].put)
-		},
-		per3() {
-			return this.percent(this.hranenie.category[2].proect, this.hranenie.category[2].put)
-		},
-		raz1() {
-			return (this.hranenie.category[0].proect - this.hranenie.category[0].put).toFixed(2)
-		},
-		raz2() {
-			return (this.hranenie.category[1].proect - this.hranenie.category[1].put).toFixed(2)
-		},
-		raz3() {
-			return (this.hranenie.category[2].proect - this.hranenie.category[2].put).toFixed(2)
-		},
-	}
+	name: 'hranenie-view'
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+:root {
+	--main-line-height: 25px;
+	--line-height: 20px;
+}
 
+.table__header {
+	width: 90vw;
+	margin: 0 auto;
+	background-color: #235ad1;
+	height: calc(var(--main-line-height) * 3);
+	text-align: center;
+	color: #fff;
+}
+
+.table__line {
+	width: 90vw;
+	margin: 0 auto;
+	background-color: #f8f8fa;
+	text-align: center;
+	color: #000;
+}
+
+.header {
+	border: 1px solid #ddd;
+}
+
+.table__border {
+	border: 1px solid #ddd;
+}
+
+.mbb {
+	margin: -5px 0;
+}
+
+.subheader {
+	padding: 0;
+	margin: 0;
+	height: calc(var(--main-line-height) * 2);
+	line-height: calc(var(--main-line-height) * 2);
+}
+
+.header3 {
+	line-height: calc(var(--main-line-height) * 3);
+}
+
+.header2 {
+	line-height: calc(var(--main-line-height) * 3 / 2);
+}
+
+.header1 {
+	line-height: var(--main-line-height);
+	height: var(--main-line-height);
+	align-self: start;
+	padding: 0;
+	margin: 0;
+}
 </style>

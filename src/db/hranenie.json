@@ -21,11 +21,12 @@
 			"cat": "НАО",
 			"proect": "2000",
 			"put": "2000"
-		}]
+		}
+	]
 	},
 	{
-		"id": 0,
-		"count": 3,
+		"id": 1,
+		"count": 2,
 		"name": "ХЖТО-2",
 		"description": "Хранилище жидких и твердых отходов",
 		"proectvalue": 16000,
@@ -40,6 +41,77 @@
 				"cat": "НАО",
 				"proect": "12325",
 				"put": "11445"
-			}]
-		}
-	]
+			}
+		]
+	},
+	{
+		"id": 2,
+		"count": 1,
+		"name": "ХТРО-1",
+		"description": "Хранилище твердых радиоактивных отходов",
+		"proectvalue": 4250,
+		"category": [{
+				"id": 1,
+				"cat": "ОНРАО+НАО",
+				"proect": 4250,
+				"put": 2367.2
+			}
+		]
+	},
+	{
+		"id": 3,
+		"count": 1,
+		"name": "Пристрой к ХТО",
+		"description": "Пристрой к ХТО",
+		"proectvalue": 2800,
+		"category": [{
+				"id": 1,
+				"cat": "ОНРАО+НАО",
+				"proect": 2800,
+				"put": 700
+			}
+		]
+	},
+	{
+		"id": 4,
+		"count": 1,
+		"name": "СДКМЗ-1",
+		"description": "Пристрой к ХТО",
+		"proectvalue": 2000,
+		"category": [{
+				"id": 1,
+				"cat": "ОНРАО+НАО",
+				"proect": 2000,
+				"put": 1700
+			}
+		]
+	},
+	{
+		"id": 5,
+		"count": 1,
+		"name": "СДКМЗ-2",
+		"description": "Пристрой к ХТО",
+		"proectvalue": 2000,
+		"category": [{
+				"id": 1,
+				"cat": "ОНРАО+НАО",
+				"proect": 2000,
+				"put": 1629.5
+			}
+		]
+	},
+	{
+		"id": 6,
+		"count": 1,
+		"name": "ПХБ",
+		"description": "Пристрой к ХТО",
+		"proectvalue": 3000,
+		"category": [{
+				"id": 1,
+				"cat": "ОНРАО+НАО",
+				"proect": 3000,
+				"put": 2863.2
+			}
+		]
+	}
+]
