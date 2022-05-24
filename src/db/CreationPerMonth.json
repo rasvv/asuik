@@ -1,0 +1,121 @@
+[{
+		"id": 0,
+		"name": 1,
+		"normnao": 8,
+		"normsvao": 9,
+		"nao": 12.22,
+		"sao": 0.43,
+		"vao": 2.05,
+		"mrao": 1.38
+	},
+	{
+		"id": 1,
+		"name": 2,
+		"normnao": 14,
+		"normsvao": 9,
+		"nao": 13.92,
+		"sao": 5.55,
+		"vao": 1.2,
+		"mrao": 0.61
+	},
+	{
+		"id": 2,
+		"name": 3,
+		"normnao": 12,
+		"normsvao": 9,
+		"nao": 5.4,
+		"sao": 5.53,
+		"vao": 1.63,
+		"mrao": 1.66
+	},
+	{
+		"id": 3,
+		"name": 4,
+		"normnao": 20,
+		"normsvao": 9,
+		"nao": 9.57,
+		"sao": 1.66,
+		"vao": 2.8,
+		"mrao": 1.86
+	},
+	{
+		"id": 4,
+		"name": 5,
+		"normnao": 18,
+		"normsvao": 10,
+		"nao": 23.85,
+		"sao": 3.93,
+		"vao": 2.13,
+		"mrao": 2.12
+	},
+	{
+		"id": 5,
+		"name": 6,
+		"normnao": 17,
+		"normsvao": 10,
+		"nao": 18.12,
+		"sao": 2.93,
+		"vao": 2.48,
+		"mrao": 1.92
+	},
+	{
+		"id": 6,
+		"name": 7,
+		"normnao": 18,
+		"normsvao": 10,
+		"nao": 20.38,
+		"sao": 0.95,
+		"vao": 1.91,
+		"mrao": 2.42
+	},
+	{
+		"id": 7,
+		"name": 8,
+		"normnao": 15,
+		"normsvao": 10,
+		"nao": 6.13,
+		"sao": 3.34,
+		"vao": 2.54,
+		"mrao": 2.51
+	},
+	{
+		"id": 8,
+		"name": 9,
+		"normnao": 14,
+		"normsvao": 10,
+		"nao": 18.29,
+		"sao": 2.6,
+		"vao": 2.56,
+		"mrao": 0.18
+	},
+	{
+		"id": 9,
+		"name": 10,
+		"normnao": 13,
+		"normsvao": 9,
+		"nao": 8.92,
+		"sao": 1.62,
+		"vao": 2.18,
+		"mrao": 0.12
+	},
+	{
+		"id": 10,
+		"name": 11,
+		"normnao": 12,
+		"normsvao": 9,
+		"nao": 26.96,
+		"sao": 5.16,
+		"vao": 0.92,
+		"mrao": 2.28
+	},
+	{
+		"id": 100,
+		"name": "2021",
+		"normnao": 161,
+		"normsvao": 104,
+		"nao": 163.76,
+		"sao": 33.7,
+		"vao": 22.4,
+		"mrao": 17.06
+	}
+]

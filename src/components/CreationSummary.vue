@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<h3>Статистика образования РАО по цехам</h3>
-		<!-- <div class="table__header">
+		<div class="table__header">
 			<v-row no-gutters>
 				<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center table__header captionstyle bordered"
 					:style="hheight3">
-					Цех
+					Месяц
 				</v-col>
 				<v-col cols="2" :style="hheight3">
 					<v-row>
@@ -69,9 +69,7 @@
 				</v-col>
 
 			</v-row>
-		</div> -->
-
-		<Creation_Header title="Цех" :mainlineheight="mainlineheight" />
+		</div>
 		<Creation_line_one v-for="n in creation.length - 1" :key="n" :creation="creation[n - 1]"
 			:lineheight="llineheight" />
 		<div class="table__subline pa-0 d-flex justify-center align-center ">
@@ -87,13 +85,11 @@
 
 <script>
 import Creation_line_one from './Lines/Creation_line_one.vue';
-import Creation_Header from './Headers/CreationHeader.vue';
 
 export default {
 	name: 'creation-view',
 	components: {
 		Creation_line_one,
-		Creation_Header,
 	},
 	data() {
 		return {

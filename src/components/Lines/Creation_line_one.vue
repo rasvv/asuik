@@ -2,52 +2,50 @@
 	<div>
 		<div class="table__line">
 			<v-row no-gutters>
-				<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center table__header header header1">
+				<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered" :style="lheight">
 					{{ creation.name }}
 				</v-col>
-				<v-col cols="2" class="header">
-					<v-row class="d-flex align-baseline" no-gutters>
-						<v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+				<v-col cols="2">
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center">
+						<v-col cols="6" class="bordered" :style="lheight">
 							{{ creation.normnao }}
 						</v-col>
-						<v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+						<v-col cols="6" class=" bordered" :style="lheight">
 							{{ creation.normsvao }}
 						</v-col>
 					</v-row>
 				</v-col>
-				<v-col cols="9" class="header">
-					<v-row class="d-flex align-baseline" no-gutters>
-						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+
+				<v-col cols="9">
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center">
+						<v-col cols="1" class="bordered" :style="lheight">
 							{{ creation.nao }}
 						</v-col>
-						<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header1">
-							<v-progress-linear class="mbb" :color=this.colnao[0] height="38" :value=+this.colnao[1]>
-								<v-col cols="12">
-									{{ pernao }}
-								</v-col>
+						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
+							<v-progress-linear class="mbb" :color=this.colnao[0] :height="lineheight - 2"
+								:value=+this.colnao[1]>
+								{{ pernao }}
 							</v-progress-linear>
 						</v-col>
-						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+						<v-col cols="1" class="bordered" :style="lheight">
 							{{ creation.sao }}
 						</v-col>
-						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+						<v-col cols="1" class="bordered" :style="lheight">
 							{{ creation.vao }}
 						</v-col>
-						<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header1">
-							<v-progress-linear class="mbb" :color=this.colsvao[0] height="38" :value=+this.colsvao[1]>
-								<v-col cols="12">
-									{{ persvao }}
-								</v-col>
+						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
+							<v-progress-linear class="mbb" :color=this.colsvao[0] :height="lineheight - 2"
+								:value=+this.colsvao[1]>
+								{{ persvao }}
 							</v-progress-linear>
 						</v-col>
-						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+						<v-col cols="1" class="bordered" :style="lheight">
 							{{ creation.mrao }}
 						</v-col>
-						<v-col cols="4" class="pa-0 ma-0 d-flex justify-center align-center header header1">
-							<v-progress-linear class="mbb" :color=this.colsum[0] height="38" :value=this.colsum[1]>
-								<v-col cols="12">
-									{{ persum }}
-								</v-col>
+						<v-col cols="4" class="pa-0 ma-0 bordered" :style="lheight">
+							<v-progress-linear class="mbb" :color=this.colsum[0] :height="lineheight - 2"
+								:value=this.colsum[1]>
+								{{ persum }}
 							</v-progress-linear>
 						</v-col>
 					</v-row>
@@ -61,7 +59,17 @@
 <script>
 export default {
 	name: 'creation-line-one',
-	props: ['creation'],
+	props: ['creation', 'lineheight'],
+	data() {
+		return {
+			lheight: {
+				height: `${this.lineheight}px`,
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center'
+			}
+		}
+	},
 	methods: {
 		percent(val1, val2) {
 			return ((100 * val2 / val1).toFixed(2))

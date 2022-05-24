@@ -1,5 +1,5 @@
 [{
-		"id": 0,
+		"id": 1,
 		"name": "ОДМиТК",
 		"normnao": 10,
 		"normsvao": 1,
@@ -9,7 +9,7 @@
 		"mrao": 1.8
 	},
 	{
-		"id": 1,
+		"id": 2,
 		"name": "ОИКТ",
 		"normnao": 1,
 		"normsvao": 0,
@@ -19,7 +19,7 @@
 		"mrao": 0
 	},
 	{
-		"id": 2,
+		"id": 3,
 		"name": "ОМ",
 		"normnao": 1,
 		"normsvao": 0,
@@ -29,7 +29,7 @@
 		"mrao": 0
 	},
 	{
-		"id": 3,
+		"id": 4,
 		"name": "ОРБ",
 		"normnao": 3,
 		"normsvao": 0,
@@ -180,7 +180,7 @@
 	},
 	{
 		"id": 100,
-		"name": "",
+		"name": "ИТОГО",
 		"normnao": 1112,
 		"normsvao": 238.75,
 		"nao": 872.94,
