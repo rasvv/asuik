@@ -1,33 +1,33 @@
 [{
 	"id": 0,
 	"count": "3",
-	"name": "ХТО",
+	"name": "ХТО1",
 	"description": "Хранилище твердых отходов",
 	"proectvalue": 5760,
 	"category": [{
 			"id": 1,
 			"cat": "ВАО",
-			"proect": "1880",
-			"put": "1880"
+			"proect": 1880,
+			"put": 188
 		},
 		{
 			"id": 2,
 			"cat": "САО",
-			"proect": "1880",
-			"put": "1880"
+			"proect": 1880,
+			"put": 1080
 		},
 		{
 			"id": 3,
 			"cat": "НАО",
-			"proect": "2000",
-			"put": "2000"
+			"proect": 2000,
+			"put": 1574
 		}
 	]
 	},
 	{
 		"id": 1,
 		"count": 2,
-		"name": "ХЖТО-2",
+		"name": "ХЖТО-4",
 		"description": "Хранилище жидких и твердых отходов",
 		"proectvalue": 16000,
 		"category": [{
@@ -47,7 +47,7 @@
 	{
 		"id": 2,
 		"count": 1,
-		"name": "ХТРО-1",
+		"name": "ХТРО-6",
 		"description": "Хранилище твердых радиоактивных отходов",
 		"proectvalue": 4250,
 		"category": [{
@@ -61,7 +61,7 @@
 	{
 		"id": 3,
 		"count": 1,
-		"name": "Пристрой к ХТО",
+		"name": "ХТО-17",
 		"description": "Пристрой к ХТО",
 		"proectvalue": 2800,
 		"category": [{
@@ -75,7 +75,7 @@
 	{
 		"id": 4,
 		"count": 1,
-		"name": "СДКМЗ-1",
+		"name": "СК-1",
 		"description": "Пристрой к ХТО",
 		"proectvalue": 2000,
 		"category": [{
@@ -89,7 +89,7 @@
 	{
 		"id": 5,
 		"count": 1,
-		"name": "СДКМЗ-2",
+		"name": "СК-2",
 		"description": "Пристрой к ХТО",
 		"proectvalue": 2000,
 		"category": [{

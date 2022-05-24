@@ -2,43 +2,43 @@
 	<div>
 		<div class="table__line">
 			<v-row no-gutters>
-				<v-col cols="2" class="header header2">
+				<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header2">
 					{{ hranenie.name }}
 				</v-col>
 				<v-col cols="1" class="header header2">
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
 							{{ hranenie.category[0].cat }}
 						</v-col>
 					</v-row>
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
 							{{ hranenie.category[1].cat }}
 						</v-col>
 					</v-row>
 				</v-col>
-				<v-col cols="2" class="header header2">
+				<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header2">
 					{{ hranenie.proectvalue }}
 				</v-col>
 				<v-col cols="2" class="header header2">
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
 							{{ hranenie.category[0].proect }}
 						</v-col>
 					</v-row>
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
 							{{ hranenie.category[1].proect }}
 						</v-col>
 					</v-row>
 				</v-col>
 				<v-col cols="2" class="header header2">
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
 							{{ hranenie.category[0].put }}
 						</v-col>
 					</v-row>
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
 							{{ hranenie.category[1].put }}
 						</v-col>
@@ -46,28 +46,31 @@
 				</v-col>
 				<v-col cols="1" class="header header2">
 					<v-row class="header header1" no-gutters>
-						<v-col cols="12">
-							{{per1}}
-							<v-progress-linear class="mbb" color="red" :value=this.per1></v-progress-linear>
-						</v-col>
+						<v-progress-linear class="mbb" color="red" height="38" :value=this.per1>
+							<v-col cols="12">
+								{{ per1 }}
+							</v-col>
+						</v-progress-linear>
+
 					</v-row>
 					<v-row class="header header1" no-gutters>
-						<v-col cols="12">
-							{{per2}}
-							<v-progress-linear class="mbb" color="red" :value=this.per2></v-progress-linear>
-						</v-col>
+						<v-progress-linear class="mbb" color="red" height="38" :value=this.per1>
+							<v-col cols="12">
+								{{ per2 }}
+							</v-col>
+						</v-progress-linear>
 					</v-row>
 				</v-col>
 
 				<v-col cols="2" class="header header2">
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
-							{{raz1}}
+							{{ raz1 }}
 						</v-col>
 					</v-row>
-					<v-row class="header header1" no-gutters>
+					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
 						<v-col cols="12">
-							{{raz2}}
+							{{ raz2 }}
 						</v-col>
 					</v-row>
 				</v-col>
@@ -83,7 +86,7 @@ export default {
 	props: ['hranenie'],
 	methods: {
 		percent(val1, val2) {
-			return((100*val2/val1).toFixed(2))
+			return ((100 * val2 / val1).toFixed(2))
 		}
 	},
 	computed: {
@@ -105,5 +108,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
 </style>

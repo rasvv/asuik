@@ -1,39 +1,40 @@
 <template>
   <div>
-    <h3>Состояние хранилищ ТРО</h3>
+    <h3>Заполнение хранилищ РАО</h3>
     <div class="table__header">
       <v-row no-gutters>
-        <v-col cols="2" class="header header3">
+        <v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center table__header header">
           Хранилище
         </v-col>
-        <v-col cols="1" class="header header2">
+        <v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center table__header header">
           Категория РАО
         </v-col>
         <v-col cols="4" class="header">
-          <v-row class="subheader" no-gutters>
+          <v-row>
             <v-col cols="12">
-              Проектный объем, м3
+              <v-col class="pa-0 ma-0 d-flex justify-center align-center table__header subheader header">
+                Проектный объем, м3
+              </v-col>
+
+              <v-row class="d-flex align-baseline" no-gutters>
+                <v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+                  Всего
+                </v-col>
+                <v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+                  По категориям
+                </v-col>
+              </v-row>
             </v-col>
           </v-row>
-          <v-row class="header3" no-gutters>
-            <v-col cols="6" class="header header1">
-              Всего
-            </v-col>
-            <v-col cols="6" class="header header1">
-              По категориям
-            </v-col>
-          </v-row>
-
-
         </v-col>
-        <v-col cols="2" class="header header3">
+        <v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center table__header header">
           Размещено, м3
         </v-col>
-        <v-col cols="1" class="header header2">
+        <v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center table__header header">
           % заполнения
         </v-col>
-        <v-col cols="2" class="header header3">
-          Свободный объем
+        <v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center table__header header">
+          Свободный объем, м3
         </v-col>
 
       </v-row>
@@ -41,6 +42,13 @@
     <Line_three :hranenie="hranenie[0]" />
     <Line_two :hranenie="hranenie[1]" />
     <Line_one :hranenie="hranenie[2]" />
+    <div class="table__subline pa-0 d-flex justify-center align-center ">
+      <v-row class="pa-0 d-flex justify-center align-center header header1" no-gutters>
+        <v-col cols="12">
+          Временные хранилища
+        </v-col>
+      </v-row>
+    </div>
     <Line_one :hranenie="hranenie[3]" />
     <Line_one :hranenie="hranenie[4]" />
     <Line_one :hranenie="hranenie[5]" />
@@ -64,7 +72,7 @@ export default {
     return {
       hranenie: [],
       mainlineheight: 25,
-      lineheight: 20,      
+      lineheight: 20,
     };
   },
   methods: {
@@ -84,32 +92,20 @@ h3 {
   margin-bottom: 20px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-
 :root {
-	--main-line-height: 40px;
-	--line-height: 30px;
+  --main-line-height: 40px;
+  --line-height: 40px;
 }
 
 .table__header {
   width: 90vw;
   margin: 0 auto;
-  background-color: #235ad1;
+  /* background-color: #235ad1;#ecf5fa */
+  background-color: #ecf5fa;
   height: calc(var(--main-line-height) * 3);
   text-align: center;
-  color: #fff;
+  font-weight: bold;
+  /* color: #fff; */
 }
 
 .table__line {
@@ -120,8 +116,18 @@ a {
   color: #000;
 }
 
+.table__subline {
+  width: 90vw;
+  margin: 0 auto;
+  background-color: #ecf5fa;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+}
+
 .header {
   border: 1px solid #ddd;
+  /* height: calc(var(--main-line-height) * 3); */
 }
 
 .table__border {
@@ -129,29 +135,29 @@ a {
 }
 
 .mbb {
-  margin: -5px 0;
+  margin: 0;
 }
 
 .subheader {
   padding: 0;
   margin: 0;
   height: calc(var(--main-line-height) * 2);
-  line-height: calc(var(--main-line-height) * 2);
+  /* line-height: calc(var(--main-line-height) * 2); */
 }
 
 .header3 {
-  line-height: calc(var(--main-line-height) * 3);
+  height: calc(var(--main-line-height) * 3);
 }
 
 .header2 {
-  line-height: calc(var(--main-line-height) * 3 / 2);
+  height: calc(var(--main-line-height) * 2);
 }
 
 .header1 {
-  line-height: var(--main-line-height);
   height: var(--main-line-height);
   align-self: start;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 </style>

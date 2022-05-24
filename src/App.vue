@@ -1,23 +1,24 @@
 <template>
-	<v-app>
-		<v-main>
-			<Hranenie />
-		</v-main>
-	</v-app>
+  <v-app>
+    <v-main>
+      <Creation />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import Hranenie from './components/Hranenie.vue';
+// import Hranenie from './components/Hranenie.vue';
+import Creation from './components/Creation.vue';
 
 export default {
-	name: 'App',
+  name: 'App',
 
-	components: {
-		Hranenie
-	},
+  components: {
+    Creation
+  },
 
-	data: () => ({
-		//
-	}),
+  data: () => ({
+    //
+  }),
 };
 </script>

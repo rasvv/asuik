@@ -1,0 +1,104 @@
+<template>
+	<div>
+		<div class="table__line">
+			<v-row no-gutters>
+				<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center table__header header header1">
+					{{ creation.name }}
+				</v-col>
+				<v-col cols="2" class="header">
+					<v-row class="d-flex align-baseline" no-gutters>
+						<v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							{{ creation.normnao }}
+						</v-col>
+						<v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							{{ creation.normsvao }}
+						</v-col>
+					</v-row>
+				</v-col>
+				<v-col cols="9" class="header">
+					<v-row class="d-flex align-baseline" no-gutters>
+						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							{{ creation.nao }}
+						</v-col>
+						<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							<v-progress-linear class="mbb" :color=this.colnao[0] height="38" :value=+this.colnao[1]>
+								<v-col cols="12">
+									{{ pernao }}
+								</v-col>
+							</v-progress-linear>
+						</v-col>
+						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							{{ creation.sao }}
+						</v-col>
+						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							{{ creation.vao }}
+						</v-col>
+						<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							<v-progress-linear class="mbb" :color=this.colsvao[0] height="38" :value=+this.colsvao[1]>
+								<v-col cols="12">
+									{{ persvao }}
+								</v-col>
+							</v-progress-linear>
+						</v-col>
+						<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							{{ creation.mrao }}
+						</v-col>
+						<v-col cols="4" class="pa-0 ma-0 d-flex justify-center align-center header header1">
+							<v-progress-linear class="mbb" :color=this.colsum[0] height="38" :value=this.colsum[1]>
+								<v-col cols="12">
+									{{ persum }}
+								</v-col>
+							</v-progress-linear>
+						</v-col>
+					</v-row>
+				</v-col>
+
+			</v-row>
+		</div>
+	</div>
+</template>
+
+<script>
+export default {
+	name: 'creation-line-one',
+	props: ['creation'],
+	methods: {
+		percent(val1, val2) {
+			return ((100 * val2 / val1).toFixed(2))
+		}
+	},
+	computed: {
+		pernao() {
+			return +this.percent(this.creation.normnao, this.creation.nao)
+		},
+		colnao() {
+			if (+this.pernao < 60) { return ["green", +this.pernao] }
+			else if (+this.pernao < 80) { return ["yellow", +this.pernao] }
+			else { return ["red", (+this.pernao > 100) ? 100 : +this.pernao] }
+		},
+		persvao() {
+			const svao = this.creation.sao + this.creation.vao
+			if (svao === 0) return 0
+			else return +this.percent(this.creation.normsvao, svao)
+		},
+		colsvao() {
+			if (+this.persvao < 60) { return ["green", +this.persvao] }
+			else if (+this.persvao < 80) { return ["yellow", +this.persvao] }
+			else { return ["red", (+this.persvao > 100) ? 100 : +this.persvao] }
+		},
+		persum() {
+			return +this.percent(this.creation.normnao + this.creation.normsvao,
+				this.creation.nao + this.creation.sao + this.creation.vao + this.creation.mrao)
+		},
+		colsum() {
+			if (+this.persum < 60) { return ["green", this.persum] }
+			else if (+this.persum < 80) { return ["yellow", this.persum] }
+			else { return ["red", (+this.persum > 100) ? 100 : +this.persum] }
+		},
+	}
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+</style>
