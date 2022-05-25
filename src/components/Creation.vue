@@ -140,7 +140,7 @@ h3 {
 }
 
 .table__header {
-	width: 90vw;
+	width: 95%;
 	margin: 0 auto;
 	/* height: calc(mainlineheight * 3) + 'px'; */
 }
@@ -152,7 +152,7 @@ h3 {
 }
 
 .table__line {
-	width: 90vw;
+	width: 95%;
 	margin: 0 auto;
 	background-color: #f8f8fa;
 	text-align: center;
@@ -160,7 +160,7 @@ h3 {
 }
 
 .table__subline {
-	width: 90vw;
+	width: 95%;
 	margin: 0 auto;
 	background-color: #ecf5fa;
 	text-align: center;

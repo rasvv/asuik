@@ -8,7 +8,7 @@
 
 <script>
 // import Hranenie from './components/Hranenie.vue';
-import Creation from './components/Creation.vue';
+import Creation from './components/VueChartJS.vue';
 
 export default {
   name: 'App',
