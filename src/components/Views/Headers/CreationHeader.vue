@@ -68,27 +68,13 @@
 	</div>
 </template>
 
+<script src="@/components/scripts/sizeline.js"></script>
+
 <script>
+// import * as styl from '@/components/scripts/sizeline.js'
 export default {
 	name: 'creation-header',
 	props: ['title', 'mainlineheight'],
-	computed: {
-		hheight3() {
-			return {
-				height: `${this.mainlineheight * 3}px`
-			}
-		},
-		hheight2() {
-			return {
-				height: `${this.mainlineheight * 2}px`
-			}
-		},
-		hheight1() {
-			return {
-				height: `${this.mainlineheight}px`
-			}
-		},
-	}
 }
 
 </script>

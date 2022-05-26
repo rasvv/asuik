@@ -2,74 +2,74 @@
 	<div>
 		<div class="table__line">
 			<v-row no-gutters>
-				<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header2">
+				<v-col cols="2" class="cellstandart bordered">
 					{{ hranenie.name }}
 				</v-col>
-				<v-col cols="1" class="header header2">
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+				<v-col cols="1">
+					<v-row no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ hranenie.category[0].cat }}
 						</v-col>
 					</v-row>
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+					<v-row class="cellstandart header header1" no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ hranenie.category[1].cat }}
 						</v-col>
 					</v-row>
 				</v-col>
-				<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center header header2">
+				<v-col cols="2" class="cellstandart bordered">
 					{{ hranenie.proectvalue }}
 				</v-col>
-				<v-col cols="2" class="header header2">
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+				<v-col cols="2">
+					<v-row no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ hranenie.category[0].proect }}
 						</v-col>
 					</v-row>
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+					<v-row no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ hranenie.category[1].proect }}
 						</v-col>
 					</v-row>
 				</v-col>
-				<v-col cols="2" class="header header2">
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+				<v-col cols="2">
+					<v-row no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ hranenie.category[0].put }}
 						</v-col>
 					</v-row>
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+					<v-row no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ hranenie.category[1].put }}
 						</v-col>
 					</v-row>
 				</v-col>
-				<v-col cols="1" class="header header2">
-					<v-row class="header header1" no-gutters>
+				<v-col cols="1">
+					<v-row no-gutters>
 						<v-progress-linear class="mbb" color="red" height="38" :value=this.per1>
-							<v-col cols="12">
+							<v-col cols="12" class="cellstandart bordered">
 								{{ per1 }}
 							</v-col>
 						</v-progress-linear>
 
 					</v-row>
-					<v-row class="header header1" no-gutters>
+					<v-row no-gutters>
 						<v-progress-linear class="mbb" color="red" height="38" :value=this.per1>
-							<v-col cols="12">
+							<v-col cols="12" class="cellstandart bordered">
 								{{ per2 }}
 							</v-col>
 						</v-progress-linear>
 					</v-row>
 				</v-col>
 
-				<v-col cols="2" class="header header2">
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+				<v-col cols="2">
+					<v-row no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ raz1 }}
 						</v-col>
 					</v-row>
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center header header1" no-gutters>
-						<v-col cols="12">
+					<v-row no-gutters>
+						<v-col cols="12" class="cellstandart bordered">
 							{{ raz2 }}
 						</v-col>
 					</v-row>

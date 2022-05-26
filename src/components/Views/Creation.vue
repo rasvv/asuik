@@ -3,23 +3,23 @@
 		<h3>Статистика образования РАО по цехам</h3>
 		<!-- <div class="table__header">
 			<v-row no-gutters>
-				<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center table__header captionstyle bordered"
+				<v-col cols="1" class="cellstandart table__header captionstyle bordered"
 					:style="hheight3">
 					Цех
 				</v-col>
 				<v-col cols="2" :style="hheight3">
 					<v-row>
 						<v-col cols="12">
-							<v-col class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+							<v-col class="cellstandart captionstyle bordered"
 								:style="hheight2">
 								Квота
 							</v-col>
 							<v-row no-gutters>
-								<v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="6" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									НАО
 								</v-col>
-								<v-col cols="6" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="6" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									СВАО
 								</v-col>
@@ -30,36 +30,36 @@
 				<v-col cols="9">
 					<v-row>
 						<v-col cols="12">
-							<v-col class="pa-0 ma-0 d-flex justify-center align-center captionstyle subheader bordered"
+							<v-col class="cellstandart captionstyle subheader bordered"
 								:style="hheight2">
 								Образование
 							</v-col>
 							<v-row class="d-flex align-baseline" no-gutters>
-								<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="1" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									НАО
 								</v-col>
-								<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="2" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									%НАО
 								</v-col>
-								<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="1" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									САО
 								</v-col>
-								<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="1" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									ВАО
 								</v-col>
-								<v-col cols="2" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="2" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									%СВАО
 								</v-col>
-								<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="1" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									МРАО
 								</v-col>
-								<v-col cols="4" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered"
+								<v-col cols="4" class="cellstandart captionstyle bordered"
 									:style="hheight1">
 									%ИТОГО
 								</v-col>

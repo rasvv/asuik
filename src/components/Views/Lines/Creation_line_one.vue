@@ -2,11 +2,11 @@
 	<div>
 		<div class="table__line">
 			<v-row no-gutters>
-				<v-col cols="1" class="pa-0 ma-0 d-flex justify-center align-center captionstyle bordered" :style="lheight">
+				<v-col cols="1" class="cellstandart captionstyle bordered" :style="lheight">
 					{{ creation.name }}
 				</v-col>
 				<v-col cols="2">
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center">
+					<v-row class="cellstandart">
 						<v-col cols="6" class="bordered" :style="lheight">
 							{{ creation.normnao }}
 						</v-col>
@@ -17,7 +17,7 @@
 				</v-col>
 
 				<v-col cols="9">
-					<v-row class="pa-0 ma-0 d-flex justify-center align-center">
+					<v-row class="cellstandart">
 						<v-col cols="1" class="bordered" :style="lheight">
 							{{ creation.nao }}
 						</v-col>

@@ -1,0 +1,49 @@
+{
+	"labels": [
+	  "0",
+	  "Янв",
+	  "Фев",
+	  "Мар",
+	  "Апр",
+	  "Май",
+	  "Июнь",
+	  "Июль",
+	  "Авг",
+	  "Сен",
+	  "Окт",
+	  "Ноя",
+	  "Дек"
+	],
+	"datasets": [
+	  {
+		 "label": "Норма",
+		 "backgroundColor": "grey",
+		 "data": []
+	  },
+	  {
+		 "label": "НАО",
+		 "backgroundColor": "yellow",
+		 "data": []
+	  },
+	  {
+		 "label": "САО",
+		 "backgroundColor": "purple",
+		 "data": []
+	  },
+	  {
+		"label": "ВАО",
+		"backgroundColor": "red",
+		"data": []
+	 },
+	 {
+		"label": "МРАО",
+		"backgroundColor": "blue",
+		"data": []
+	 },
+	 {
+		"label": "ИТОГО",
+		"backgroundColor": "green",
+		"data": []
+	 }
+]
+ }
