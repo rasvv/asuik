@@ -71,7 +71,7 @@
 			</v-row>
 		</div> -->
 
-		<Creation_Header title="Цех" :mainlineheight="mainlineheight" />
+		<Creation_Header title="Цех" :mainlineheight="hheight3" />
 		<Creation_line_one v-for="n in creation.length - 1" :key="n" :creation="creation[n - 1]"
 			:lineheight="llineheight" />
 		<div class="table__subline pa-0 d-flex justify-center align-center ">
@@ -88,7 +88,7 @@
 <script>
 import Creation_line_one from './Lines/Creation_line_one.vue';
 import Creation_Header from './Headers/CreationHeader.vue';
-// import { store } from './store';
+import { mapGetters } from 'vuex'
 
 export default {
 	name: 'creation-view',
@@ -98,16 +98,21 @@ export default {
 	},
 	data() {
 		return {
-			mainlineheight: 30,
-			lineheight: 15,
+			// mainlineheight: 30,
+			// lineheight: 15,
 		};
 	},
 	methods: {
+		hheight1() { this.HHEIGHT1 },
+		hheight2() { this.HHEIGHT2 },
+		hheight3() { this.HHEIGHT3 },
+		llineheight() { this.LINEHEIGHT },
+		creation() { this.creation }
 	},
-	created() {
-		// this.creation = require("@/db/Creation.json");
-		// this.creation = require("@/db/CreationPerMonth.json");
-	},
+	// created() {
+	// this.creation = require("@/db/Creation.json");
+	// this.creation = require("@/db/CreationPerMonth.json");
+	// },
 	// computed: {
 	// 	llineheight() {
 	// 		return (this.lineheight * 2.17).toFixed(0)
@@ -128,12 +133,14 @@ export default {
 	// 		}
 	// 	},
 	// },
-	mounted() {
-		this.creation = this.$store.dispatch('creation');
-		this.hheight1 = this.$store.dispatch('HHEIGHT1');
-		this.hheight2 = this.$store.dispatch('HHEIGHT2');
-		this.hheight3 = this.$store.dispatch('HHEIGHT3');
-		this.llineheight = this.$store.dispatch('LINEHEIGHT');
+	computed: {
+		// this.creation = this.$store.dispatch('creation');
+		// console.log(this.creation);
+		...mapGetters([
+			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'creation'
+			// 'getPhotoCurrentPage'
+		]),
+
 	}
 }
 
@@ -141,7 +148,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-h3 {
+/* h3 {
 	margin: 40px 0 0;
 	text-align: center;
 	margin-bottom: 20px;
@@ -150,12 +157,10 @@ h3 {
 .table__header {
 	width: 95%;
 	margin: 0 auto;
-	/* height: calc(mainlineheight * 3) + 'px'; */
 }
 
 .captionstyle {
 	background-color: #ecf5fa;
-	/* text-align: center; */
 	font-weight: bold;
 }
 
@@ -181,7 +186,6 @@ h3 {
 
 .bordered {
 	border: 1px solid #ddd;
-	/* height: calc(var(--main-line-height) * 3); */
 }
 
 .table__border {
@@ -190,46 +194,5 @@ h3 {
 
 .mbb {
 	margin: 0;
-}
-
-.subheader {
-	height: calc(mainlineheight * 2) + 'px';
-}
-
-/* .header3 {
-	height: calc(lineheight * 3) + 'px';
-}
-
-.header2 {
-	height: calc(lineheight * 2) + 'px';
-}
-
-.header1 {
-	height: lineheight + 'px';
 } */
-
-/* .hh1 {
-	height: mainlineheight + 'px';
-}
-
-.hh2 {
-	height: calc(mainlineheight * 2) + 'px';
-}
-
-.hh3 {
-	height: calc(mainlineheight * 3) + 'px';
-} */
-
-/* .lh1 {
-	height: llineheight + 'px';
-	/* height: '50px'; */
-/* } */
-
-*/ .lh2 {
-	height: calc(lineheight * 2) + 'px';
-}
-
-.lh3 {
-	height: calc(lineheight * 3) + 'px';
-}
 </style>
