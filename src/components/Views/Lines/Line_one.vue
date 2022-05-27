@@ -18,7 +18,7 @@
 					{{ hranenie.category[0].put }}
 				</v-col>
 				<v-col cols="3" class="cellstandart bordered">
-					<v-progress-linear class="mbb" :color=this.col1 :height="lineheight - 2" :value=this.per1>
+					<v-progress-linear class="mbb" :color=this.col1 :height="lineheight + 2" :value=this.per1>
 						<v-col cols="12">
 							{{ per1 }}
 						</v-col>
@@ -36,7 +36,7 @@
 <script>
 export default {
 	name: 'line-three',
-	props: ['hranenie'],
+	props: ['hranenie', 'lineheight'],
 	methods: {
 		percent(val1, val2) {
 			return ((100 * val2 / val1).toFixed(2))

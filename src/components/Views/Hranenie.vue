@@ -5,7 +5,7 @@
 
 		<Line_three :hranenie="hranenie[0]" />
 		<Line_two :hranenie="hranenie[1]" />
-		<Line_one :hranenie="hranenie[2]" />
+		<Line_one :hranenie="hranenie[2]" :lineheight="lineheight" />
 		<div class="table__subline pa-0 d-flex justify-center align-center ">
 			<v-row class="pa-0 d-flex justify-center align-center header header1" no-gutters>
 				<v-col cols="12">
@@ -13,10 +13,7 @@
 				</v-col>
 			</v-row>
 		</div>
-		<Line_one :hranenie="hranenie[3]" />
-		<Line_one :hranenie="hranenie[4]" />
-		<Line_one :hranenie="hranenie[5]" />
-		<Line_one :hranenie="hranenie[6]" />
+		<Line_one v-for="n in [3, 4, 5, 6]" :key="n" :hranenie="hranenie[n]" :lineheight="lineheight" />
 	</div>
 </template>
 

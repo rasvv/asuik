@@ -4,8 +4,8 @@
       <v-row class="d-flex justify-center mt-2">
         <v-btn @click="changeForm('Creation')">Образование</v-btn>
         <v-btn @click="changeForm('Hranenie')">Хранение</v-btn>
-        <v-btn @click="changeForm('CreationSummary')">CreationSummary</v-btn>
-        <v-btn @click="changeForm('ChartSummary')">ChartSummary</v-btn>
+        <v-btn @click="changeForm('CreationSummary')">Образование по цехам</v-btn>
+        <v-btn @click="changeForm('ChartSummary')">Графики</v-btn>
       </v-row>
       <Creation v-show="form === 'Creation'" />
       <CreationSummary v-show="form === 'CreationSummary'" />
@@ -17,6 +17,7 @@
 
 <script>
 // import Hranenie from './components/Hranenie.vue';
+// import { store } from './store';
 import Creation from './components/Views/Creation.vue';
 import Hranenie from './components/Views/Hranenie.vue';
 import CreationSummary from './components/Views/CreationSummary.vue';
@@ -107,44 +108,7 @@ h3 {
   margin: 0;
 }
 
-.subheader {
+/* .subheader {
   height: calc(mainlineheight * 2) + 'px';
-}
-
-/* .header3 {
-	height: calc(lineheight * 3) + 'px';
-}
-
-.header2 {
-	height: calc(lineheight * 2) + 'px';
-}
-
-.header1 {
-	height: lineheight + 'px';
 } */
-
-/* .hh1 {
-	height: mainlineheight + 'px';
-}
-
-.hh2 {
-	height: calc(mainlineheight * 2) + 'px';
-}
-
-.hh3 {
-	height: calc(mainlineheight * 3) + 'px';
-} */
-
-/* .lh1 {
-	height: llineheight + 'px';
-	/* height: '50px'; */
-/* } */
-
-*/ .lh2 {
-  height: calc(lineheight * 2) + 'px';
-}
-
-.lh3 {
-  height: calc(lineheight * 3) + 'px';
-}
 </style>

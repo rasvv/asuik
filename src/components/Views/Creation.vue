@@ -88,6 +88,7 @@
 <script>
 import Creation_line_one from './Lines/Creation_line_one.vue';
 import Creation_Header from './Headers/CreationHeader.vue';
+// import { store } from './store';
 
 export default {
 	name: 'creation-view',
@@ -104,28 +105,35 @@ export default {
 	methods: {
 	},
 	created() {
-		this.creation = require("@/db/Creation.json");
+		// this.creation = require("@/db/Creation.json");
 		// this.creation = require("@/db/CreationPerMonth.json");
 	},
-	computed: {
-		llineheight() {
-			return (this.lineheight * 2.17).toFixed(0)
-		},
-		hheight3() {
-			return {
-				height: `${this.mainlineheight * 3}px`
-			}
-		},
-		hheight2() {
-			return {
-				height: `${this.mainlineheight * 2}px`
-			}
-		},
-		hheight1() {
-			return {
-				height: `${this.mainlineheight}px`
-			}
-		},
+	// computed: {
+	// 	llineheight() {
+	// 		return (this.lineheight * 2.17).toFixed(0)
+	// 	},
+	// 	hheight3() {
+	// 		return {
+	// 			height: `${this.mainlineheight * 3}px`
+	// 		}
+	// 	},
+	// 	hheight2() {
+	// 		return {
+	// 			height: `${this.mainlineheight * 2}px`
+	// 		}
+	// 	},
+	// 	hheight1() {
+	// 		return {
+	// 			height: `${this.mainlineheight}px`
+	// 		}
+	// 	},
+	// },
+	mounted() {
+		this.creation = this.$store.dispatch('creation');
+		this.hheight1 = this.$store.dispatch('HHEIGHT1');
+		this.hheight2 = this.$store.dispatch('HHEIGHT2');
+		this.hheight3 = this.$store.dispatch('HHEIGHT3');
+		this.llineheight = this.$store.dispatch('LINEHEIGHT');
 	}
 }
 
