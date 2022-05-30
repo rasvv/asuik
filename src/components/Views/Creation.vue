@@ -71,17 +71,16 @@
 			</v-row>
 		</div> -->
 
-		<Creation_Header title="Цех" :mainlineheight="hheight3" />
-		<Creation_line_one v-for="n in creation.length - 1" :key="n" :creation="creation[n - 1]"
-			:lineheight="llineheight" />
+		<Creation_Header title="Цех" :hh1="hh1" :hh2="hh2" :hh3="hh3" />
+		<!-- <Creation_line_one v-for="n in creat.length - 1" :key="n" :creation="creat[n - 1]" :lineheight="lh" /> -->
 		<div class="table__subline pa-0 d-flex justify-center align-center ">
-			<v-row class="pa-0 d-flex justify-center align-center bordered" :style="hheight2" no-gutters>
+			<v-row class="pa-0 d-flex justify-center align-center bordered" :style="hh2" no-gutters>
 				<v-col cols="12">
 					ИТОГО по АЭС
 				</v-col>
 			</v-row>
 		</div>
-		<Creation_line_one :creation="creation[creation.length - 1]" :lineheight="llineheight" />
+		<Creation_line_one :creation="creation[creation.length - 1]" :lineheight="lh" />
 	</div>
 </template>
 
@@ -100,39 +99,28 @@ export default {
 		return {
 			// mainlineheight: 30,
 			// lineheight: 15,
+			creat: [],
+			hh1: {},
+			hh2: {},
+			hh3: {},
+			lh: {},
+
 		};
 	},
 	methods: {
-		hheight1() { this.HHEIGHT1 },
-		hheight2() { this.HHEIGHT2 },
-		hheight3() { this.HHEIGHT3 },
-		llineheight() { this.LINEHEIGHT },
-		creation() { this.creation }
+		onGethh1() { this.hh1 = this.HHEIGHT1 },
+		onGethh2() { this.hh2 = this.HHEIGHT2 },
+		onGethh3() {
+			console.log(this.HHEIGHT3);
+			this.hh3 = this.HHEIGHT3
+		},
+		onGetlh() {
+			console.log(this.LINEHEIGHT);
+			this.lh = this.LINEHEIGHT
+		},
+		onGetCreation() { this.creat = this.creation }
 	},
-	// created() {
-	// this.creation = require("@/db/Creation.json");
-	// this.creation = require("@/db/CreationPerMonth.json");
-	// },
-	// computed: {
-	// 	llineheight() {
-	// 		return (this.lineheight * 2.17).toFixed(0)
-	// 	},
-	// 	hheight3() {
-	// 		return {
-	// 			height: `${this.mainlineheight * 3}px`
-	// 		}
-	// 	},
-	// 	hheight2() {
-	// 		return {
-	// 			height: `${this.mainlineheight * 2}px`
-	// 		}
-	// 	},
-	// 	hheight1() {
-	// 		return {
-	// 			height: `${this.mainlineheight}px`
-	// 		}
-	// 	},
-	// },
+
 	computed: {
 		// this.creation = this.$store.dispatch('creation');
 		// console.log(this.creation);
@@ -140,7 +128,12 @@ export default {
 			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'creation'
 			// 'getPhotoCurrentPage'
 		]),
-
+	},
+	mounted() {
+		this.onGetCreation()
+		this.onGethh1()
+		this.onGethh2()
+		this.onGethh3()
 	}
 }
 
@@ -148,51 +141,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-/* h3 {
-	margin: 40px 0 0;
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-.table__header {
-	width: 95%;
-	margin: 0 auto;
-}
-
-.captionstyle {
-	background-color: #ecf5fa;
-	font-weight: bold;
-}
-
-.table__line {
-	width: 95%;
-	margin: 0 auto;
-	background-color: #f8f8fa;
-	text-align: center;
-	color: #000;
-}
-
-.table__subline {
-	width: 95%;
-	margin: 0 auto;
-	background-color: #ecf5fa;
-	text-align: center;
-	font-weight: bold;
-	color: #000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.bordered {
-	border: 1px solid #ddd;
-}
-
-.table__border {
-	border: 1px solid #ddd;
-}
-
-.mbb {
-	margin: 0;
-} */
 </style>

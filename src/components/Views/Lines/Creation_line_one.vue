@@ -22,8 +22,7 @@
 							{{ creation.nao }}
 						</v-col>
 						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colnao[0] :height="lineheight - 2"
-								:value=+this.colnao[1]>
+							<v-progress-linear class="mbb" :color=this.colnao[0] :height="lheight - 2" :value=+this.colnao[1]>
 								{{ pernao }}
 							</v-progress-linear>
 						</v-col>

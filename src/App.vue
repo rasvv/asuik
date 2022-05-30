@@ -3,9 +3,9 @@
     <v-main>
       <v-row class="d-flex justify-center mt-2">
         <v-btn @click="changeForm('Creation')">Образование</v-btn>
-        <v-btn @click="changeForm('Hranenie')">Хранение</v-btn>
+        <!-- <v-btn @click="changeForm('Hranenie')">Хранение</v-btn>
         <v-btn @click="changeForm('CreationSummary')">Образование по цехам</v-btn>
-        <v-btn @click="changeForm('ChartSummary')">Графики</v-btn>
+        <v-btn @click="changeForm('ChartSummary')">Графики</v-btn> -->
       </v-row>
       <Creation v-show="form === 'Creation'" />
       <CreationSummary v-show="form === 'CreationSummary'" />
@@ -19,18 +19,18 @@
 // import Hranenie from './components/Hranenie.vue';
 // import { store } from './store';
 import Creation from './components/Views/Creation.vue';
-import Hranenie from './components/Views/Hranenie.vue';
-import CreationSummary from './components/Views/CreationSummary.vue';
-import ChartSummary from './components/Views/ChartSummary.vue';
+// import Hranenie from './components/Views/Hranenie.vue';
+// import CreationSummary from './components/Views/CreationSummary.vue';
+// import ChartSummary from './components/Views/ChartSummary.vue';
 
 export default {
   name: 'App',
 
   components: {
     Creation,
-    Hranenie,
-    CreationSummary,
-    ChartSummary
+    // Hranenie,
+    // CreationSummary,
+    // ChartSummary
   },
 
   data() {
