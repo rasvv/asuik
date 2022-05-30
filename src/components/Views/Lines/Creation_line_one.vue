@@ -22,7 +22,7 @@
 							{{ creation.nao }}
 						</v-col>
 						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colnao[0] :height="lheight - 2" :value=+this.colnao[1]>
+							<v-progress-linear class="mbb" :color=this.colnao[0] :height="lineheight - 2" :value=+this.colnao[1]>
 								{{ pernao }}
 							</v-progress-linear>
 						</v-col>
@@ -56,32 +56,40 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
 	name: 'creation-line-one',
 	props: ['creation', 'lineheight'],
 	data() {
 		return {
-			lheight: {
-				height: `${this.lineheight}px`,
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center'
-			}
 		}
 	},
 	methods: {
 		percent(val1, val2) {
 			return ((100 * val2 / val1).toFixed(2))
-		}
+		},
+		getColor(val) {
+			if (+val < this.STEP1) { return ["green", +val] }
+			else if (+val < this.STEP2) { return ["yellow", +val] }
+			else { return ["red", (+val > 100) ? 100 : +val] }
+		}		
 	},
 	computed: {
+		lheight() {return {
+			height: `${this.lineheight}px`,
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center'
+		}},
+		...mapGetters([
+			'STEP1', 'STEP2'
+		]),			
 		pernao() {
 			return +this.percent(this.creation.normnao, this.creation.nao)
 		},
 		colnao() {
-			if (+this.pernao < 60) { return ["green", +this.pernao] }
-			else if (+this.pernao < 80) { return ["yellow", +this.pernao] }
-			else { return ["red", (+this.pernao > 100) ? 100 : +this.pernao] }
+			return this.getColor(+this.pernao)
 		},
 		persvao() {
 			const svao = this.creation.sao + this.creation.vao
@@ -89,23 +97,18 @@ export default {
 			else return +this.percent(this.creation.normsvao, svao)
 		},
 		colsvao() {
-			if (+this.persvao < 60) { return ["green", +this.persvao] }
-			else if (+this.persvao < 80) { return ["yellow", +this.persvao] }
-			else { return ["red", (+this.persvao > 100) ? 100 : +this.persvao] }
+			return this.getColor(+this.persvao)
 		},
 		persum() {
 			return +this.percent(this.creation.normnao + this.creation.normsvao,
 				this.creation.nao + this.creation.sao + this.creation.vao + this.creation.mrao)
 		},
 		colsum() {
-			if (+this.persum < 60) { return ["green", this.persum] }
-			else if (+this.persum < 80) { return ["yellow", this.persum] }
-			else { return ["red", (+this.persum > 100) ? 100 : +this.persum] }
+			return this.getColor(+this.persum)
 		},
-	}
+	},
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 </style>

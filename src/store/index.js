@@ -7,7 +7,9 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     mainlineheight: 30,
-    lineheight: 15,
+    lineheight: 20,
+    step1: 60,
+    step2: 80,
     creation: [{
       "id": 1,
       "name": "ОДМиТК",
@@ -202,7 +204,7 @@ export const store = new Vuex.Store({
   },
   getters: {
 		LINEHEIGHT: state => {
-			return (state.lineheight * 2.17).toFixed(0)
+			return (state.lineheight * 2).toFixed(0)
 		},
 		HHEIGHT3: state => {
 			return {
@@ -221,7 +223,13 @@ export const store = new Vuex.Store({
 		},    
 		creation: state => {
 			return state.creation
-		},       
+		},
+    STEP1: state => {
+			return state.step1
+		},
+    STEP2: state => {
+			return state.step2
+		},
   },
   mutations: {},
   actions: {},
