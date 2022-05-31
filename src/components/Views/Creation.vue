@@ -2,7 +2,8 @@
 	<div>
 		<h3>Статистика образования РАО по цехам</h3>
 		<Creation_Header title="Цех" :hh1="HHEIGHT1" :hh2="HHEIGHT2" :hh3="HHEIGHT3" />
-		<Creation_line_one v-for="n in creation.length - 1" :key="n" :creation="creation[n - 1]" :lineheight="LINEHEIGHT" />
+		<Creation_line_one v-for="n in creation.length - 1" :key="n" :creation="creation[n - 1]"
+			:lineheight="LINEHEIGHT" />
 		<div class="table__subline pa-0 d-flex justify-center align-center ">
 			<v-row class="pa-0 d-flex justify-center align-center bordered" :style="HHEIGHT2" no-gutters>
 				<v-col cols="12">
@@ -32,10 +33,14 @@ export default {
 
 	computed: {
 		...mapGetters([
-			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'creation'
+			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATION'
 		]),
+		creation() {
+			return this.CREATION.creation
+		}
 	},
 }
+
 
 </script>
 
