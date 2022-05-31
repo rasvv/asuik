@@ -1,9 +1,8 @@
 <template>
 	<div>
 		<h3>Статистика образования РАО по цехам</h3>
-		<Creation_Header title="Цех" :hh1="HHEIGHT1" :hh2="HHEIGHT2" :hh3="HHEIGHT3" />
-		<Creation_line_one v-for="n in creation.length - 1" :key="n" :creation="creation[n - 1]"
-			:lineheight="LINEHEIGHT" />
+		<Creation_Header title="Цех"  />
+		<Creation_line_one v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]" />
 		<div class="table__subline pa-0 d-flex justify-center align-center ">
 			<v-row class="pa-0 d-flex justify-center align-center bordered" :style="HHEIGHT2" no-gutters>
 				<v-col cols="12">
@@ -11,7 +10,7 @@
 				</v-col>
 			</v-row>
 		</div>
-		<Creation_line_one :creation="creation[creation.length - 1]" :lineheight="LINEHEIGHT" />
+		<Creation_line_one :creation="CREATION[CREATION.length - 1]" />
 	</div>
 </template>
 
@@ -35,9 +34,6 @@ export default {
 		...mapGetters([
 			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATION'
 		]),
-		creation() {
-			return this.CREATION.creation
-		}
 	},
 }
 

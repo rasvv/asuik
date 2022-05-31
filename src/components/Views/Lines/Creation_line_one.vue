@@ -22,7 +22,7 @@
 							{{ creation.nao }}
 						</v-col>
 						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colnao[0] :height="lineheight - 2" :value=+this.colnao[1]>
+							<v-progress-linear class="mbb" :color=this.colnao[0] :height="LINEHEIGHT - 2" :value=+this.colnao[1]>
 								{{ pernao }}
 							</v-progress-linear>
 						</v-col>
@@ -33,7 +33,7 @@
 							{{ creation.vao }}
 						</v-col>
 						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colsvao[0] :height="lineheight - 2"
+							<v-progress-linear class="mbb" :color=this.colsvao[0] :height="LINEHEIGHT - 2"
 								:value=+this.colsvao[1]>
 								{{ persvao }}
 							</v-progress-linear>
@@ -42,7 +42,7 @@
 							{{ creation.mrao }}
 						</v-col>
 						<v-col cols="4" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colsum[0] :height="lineheight - 2"
+							<v-progress-linear class="mbb" :color=this.colsum[0] :height="LINEHEIGHT - 2"
 								:value=this.colsum[1]>
 								{{ persum }}
 							</v-progress-linear>
@@ -60,7 +60,7 @@ import { mapGetters } from 'vuex'
 
 export default {
 	name: 'creation-line-one',
-	props: ['creation', 'lineheight'],
+	props: ['creation'],
 	data() {
 		return {
 		}
@@ -77,13 +77,13 @@ export default {
 	},
 	computed: {
 		lheight() {return {
-			height: `${this.lineheight}px`,
+			height: `${this.LINEHEIGHT}px`,
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center'
 		}},
 		...mapGetters([
-			'STEP1', 'STEP2'
+			'STEP1', 'STEP2', 'LINEHEIGHT', 'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATION', 'ACTIVECEH'
 		]),			
 		pernao() {
 			return +this.percent(this.creation.normnao, this.creation.nao)
@@ -106,6 +106,12 @@ export default {
 		colsum() {
 			return this.getColor(+this.persum)
 		},
+		active() {
+			return {
+				backgroundColor: "#a1d8f5",
+				fontWeight: "bold"
+			}
+		},		
 	},
 }
 </script>

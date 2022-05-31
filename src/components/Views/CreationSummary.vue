@@ -1,34 +1,33 @@
 <template>
 	<div>
-		<h3>Статистика образования РАО в {{ creation[ACTIVECEH - 1].name }}</h3>
+		<h3>Статистика образования РАО в {{ CREATION[ACTIVECEH - 1].name }}</h3>
 		<div class="table__header">
 			<v-row no-gutters>
 				<v-col cols="2">
 					<v-row no-gutters>
-						<v-col cols="12" class="d-flex justify-center align-center table__header captionstyle bordered"
+						<v-col cols="12" class="cellstandart table__header captionstyle bordered"
 							:style="HHEIGHT3">
 							Цех
 						</v-col>
 					</v-row>
-					<v-row no-gutters v-for="n in creation.length - 1" :key="n" :creationceh="creation[n - 1]">
+					<v-row no-gutters v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]">
 						<v-col cols="12" class="cellstandart bordered"
 							:style="n === ACTIVECEH ? [active, HHEIGHT1] : HHEIGHT1">
-							{{ creation[n - 1].name }}
+							{{ CREATION[n - 1].name }}
 						</v-col>
 					</v-row>
 				</v-col>
 				<v-col cols="10" :style="HHEIGHT3">
 					<v-row>
 						<v-col cols="12">
-							<Creation_Header title="Год" :hh1="HHEIGHT1" :hh2="HHEIGHT2" :hh3="HHEIGHT3" />
-							<Creation_line_one :creation="creation[creation.length - 1]" :lineheight="LINEHEIGHT" />
+							<Creation_Header title="Год"/>
+							<Creation_line_one :creation="CREATION[CREATION.length - 1]" />
 						</v-col>
 					</v-row>
 					<v-row>
 						<v-col cols="12">
-							<Creation_Header title="Месяц" :hh1="HHEIGHT1" :hh2="HHEIGHT2" :hh3="HHEIGHT3" />
-							<Creation_line_one v-for="n in creation.length - 1" :key="n" :creation="creation[n - 1]"
-								:lineheight="LINEHEIGHT" />
+							<Creation_Header title="Месяц"/>
+							<Creation_line_one v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]" />
 						</v-col>
 					</v-row>
 
@@ -51,7 +50,6 @@ export default {
 	},
 	data() {
 		return {
-			activeCeh: 7
 		};
 	},
 	methods: {
@@ -60,12 +58,6 @@ export default {
 		...mapGetters([
 			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATION', 'ACTIVECEH'
 		]),
-		creation() {
-			return this.CREATION.creation
-		},
-		creationceh() {
-			return this.CREATIONCEH.creationceh
-		},
 		active() {
 			return {
 				backgroundColor: "#a1d8f5",
