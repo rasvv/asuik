@@ -4,17 +4,7 @@
 		<div class="table__header">
 			<v-row no-gutters>
 				<v-col cols="2">
-					<v-row no-gutters>
-						<v-col cols="12" class="cellstandart table__header captionstyle bordered" :style="HHEIGHT3">
-							Цех
-						</v-col>
-					</v-row>
-					<v-row no-gutters v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]">
-						<v-col cols="12" class="cellstandart bordered"
-							:style="n === ACTIVECEH ? [active, HHEIGHT1] : HHEIGHT1">
-							{{ CREATION[n - 1].name }}
-						</v-col>
-					</v-row>
+					<Cehs title='ЦЕХ' />
 				</v-col>
 				<v-col cols="10" :style="HHEIGHT3">
 					<v-row>
@@ -30,12 +20,14 @@
 
 <script>
 import ChartLine from './VueChartJS.vue';
+import Cehs from './Cehs.vue';
 import { mapGetters } from 'vuex'
 
 export default {
 	name: 'chart-summary',
 	components: {
-		ChartLine
+		ChartLine,
+		Cehs
 	},
 	computed: {
 		...mapGetters([
@@ -54,5 +46,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
 </style>

@@ -22,7 +22,8 @@
 							{{ creation.nao }}
 						</v-col>
 						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colnao[0] :height="LINEHEIGHT - 2" :value=+this.colnao[1]>
+							<v-progress-linear class="mbb" :color=this.colnao[0] :height="LINEHEIGHT - 2"
+								:value=+this.colnao[1]>
 								{{ pernao }}
 							</v-progress-linear>
 						</v-col>
@@ -73,18 +74,20 @@ export default {
 			if (+val < this.STEP1) { return ["green", +val] }
 			else if (+val < this.STEP2) { return ["yellow", +val] }
 			else { return ["red", (+val > 100) ? 100 : +val] }
-		}		
+		}
 	},
 	computed: {
-		lheight() {return {
-			height: `${this.LINEHEIGHT}px`,
-			display: 'flex',
-			justifyContent: 'center',
-			alignItems: 'center'
-		}},
+		lheight() {
+			return {
+				height: `${this.LINEHEIGHT}px`,
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center'
+			}
+		},
 		...mapGetters([
-			'STEP1', 'STEP2', 'LINEHEIGHT', 'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATION', 'ACTIVECEH'
-		]),			
+			'STEP1', 'STEP2', 'LINEHEIGHT', 'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'CREATION', 'ACTIVECEH'
+		]),
 		pernao() {
 			return +this.percent(this.creation.normnao, this.creation.nao)
 		},
@@ -111,7 +114,7 @@ export default {
 				backgroundColor: "#a1d8f5",
 				fontWeight: "bold"
 			}
-		},		
+		},
 	},
 }
 </script>

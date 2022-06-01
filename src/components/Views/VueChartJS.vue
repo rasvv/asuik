@@ -6,6 +6,7 @@
 
 <script>
 import { Line as LineChartGenerator } from 'vue-chartjs/legacy'
+import { mapGetters } from 'vuex'
 
 import {
   Chart as ChartJS,
@@ -74,13 +75,16 @@ export default {
   },
   methods: {
     arrChange(i, rr) {
-      this.chartData.datasets[i].data = rr
+      this.CHARTDATA.datasets[i].data = rr
     },
     mappingArr() {
 
     }
   },
   computed: {
+    ...mapGetters([
+      'CHARTDATA', 'CREATIONPERMONTH'
+    ]),
     chartData1() {
       let norma = 0
       let nao = 0
@@ -89,7 +93,8 @@ export default {
       let mrao = 0
       let itogo = 0
       let i = 0
-      let rr = [0, ...this.creationPerMonth.map(item => {
+
+      let rr = [0, ...this.CREATIONPERMONTH.map(item => {
         if (item.id < 100) {
           norma += +item.normnao + +item.normsvao
         }
@@ -98,7 +103,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.creationPerMonth.map(item => {
+      rr = [0, ...this.CREATIONPERMONTH.map(item => {
         if (item.id < 100) {
           nao += +item.nao
         }
@@ -107,7 +112,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.creationPerMonth.map(item => {
+      rr = [0, ...this.CREATIONPERMONTH.map(item => {
         if (item.id < 100) {
           sao += +item.sao
         }
@@ -116,7 +121,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.creationPerMonth.map(item => {
+      rr = [0, ...this.CREATIONPERMONTH.map(item => {
         if (item.id < 100) {
           vao += +item.vao
         }
@@ -125,7 +130,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.creationPerMonth.map(item => {
+      rr = [0, ...this.CREATIONPERMONTH.map(item => {
         if (item.id < 100) {
           mrao += +item.mrao
         }
@@ -134,7 +139,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.creationPerMonth.map(item => {
+      rr = [0, ...this.CREATIONPERMONTH.map(item => {
         if (item.id < 100) {
           itogo += +item.nao + +item.sao + +item.vao + +item.mrao
         }
@@ -142,15 +147,13 @@ export default {
       })]
       this.arrChange(i, rr.slice(0, rr.length - 1))
 
-
-      return this.chartData
+      return this.CHARTDATA
       // return {}
 
     }
   },
   created() {
-    this.creationPerMonth = require("@/db/CreationPerMonth.json");
-    this.chartData = require("@/db/ChartData.json");
+
   },
 }
 </script>
