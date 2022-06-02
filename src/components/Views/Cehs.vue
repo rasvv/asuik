@@ -6,7 +6,7 @@
 			</v-col>
 		</v-row>
 		<v-row no-gutters v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]">
-			<v-col cols="12" class="cellstandart bordered" :style="n === ACTIVECEH ? [active, HHEIGHT1] : HHEIGHT1">
+			<v-col cols="12" class="cellstandart bordered" :style="n === ACTIVECEH ? [active, LINEHEIGHT] : LINEHEIGHT">
 				{{ CREATION[n - 1].name }}
 			</v-col>
 		</v-row>
