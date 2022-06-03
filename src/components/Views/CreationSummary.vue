@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h3>Статистика образования РАО в {{ CREATION[ACTIVECEH - 1].name }}</h3>
+		<h3>Статистика образования РАО в {{ dat.ceh }}</h3>
 		<div class="table__header">
 			<v-row no-gutters>
 				<v-col cols="2">
@@ -10,13 +10,13 @@
 					<v-row>
 						<v-col cols="12">
 							<Creation_Header title="Год" />
-							<Creation_line :creation="CREATION[CREATION.length - 1]" />
+							<Creation_line :creation="dat.data[dat.data.length - 1]" />
 						</v-col>
 					</v-row>
 					<v-row>
 						<v-col cols="12">
 							<Creation_Header title="Месяц" />
-							<Creation_line v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]" />
+							<Creation_line v-for="n in dat.data.length - 1" :key="n" :creation="dat.data[n - 1]" />
 						</v-col>
 					</v-row>
 
@@ -47,7 +47,7 @@ export default {
 	},
 	computed: {
 		...mapGetters([
-			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATION', 'ACTIVECEH'
+			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATIONPERMONTH', 'ACTIVECEH'
 		]),
 		active() {
 			return {
@@ -55,6 +55,9 @@ export default {
 				fontWeight: "bold"
 			}
 		},
+		dat() {
+			return this.CREATIONPERMONTH[this.ACTIVECEH - 1]
+		}
 	}
 }
 

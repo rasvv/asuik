@@ -83,7 +83,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'CHARTDATA', 'CREATIONPERMONTH'
+      'CHARTDATA', 'CREATIONPERMONTH', 'ACTIVECEH'
     ]),
     chartData1() {
       let norma = 0
@@ -94,7 +94,7 @@ export default {
       let itogo = 0
       let i = 0
 
-      let rr = [0, ...this.CREATIONPERMONTH.map(item => {
+      let rr = [0, ...this.dat.data.map(item => {
         if (item.id < 100) {
           norma += +item.normnao + +item.normsvao
         }
@@ -103,7 +103,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.CREATIONPERMONTH.map(item => {
+      rr = [0, ...this.dat.data.map(item => {
         if (item.id < 100) {
           nao += +item.nao
         }
@@ -112,7 +112,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.CREATIONPERMONTH.map(item => {
+      rr = [0, ...this.dat.data.map(item => {
         if (item.id < 100) {
           sao += +item.sao
         }
@@ -121,7 +121,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.CREATIONPERMONTH.map(item => {
+      rr = [0, ...this.dat.data.map(item => {
         if (item.id < 100) {
           vao += +item.vao
         }
@@ -130,7 +130,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.CREATIONPERMONTH.map(item => {
+      rr = [0, ...this.dat.data.map(item => {
         if (item.id < 100) {
           mrao += +item.mrao
         }
@@ -139,7 +139,7 @@ export default {
       this.arrChange(i, rr.slice(0, rr.length - 1))
       i += 1
 
-      rr = [0, ...this.CREATIONPERMONTH.map(item => {
+      rr = [0, ...this.dat.data.map(item => {
         if (item.id < 100) {
           itogo += +item.nao + +item.sao + +item.vao + +item.mrao
         }
@@ -150,6 +150,9 @@ export default {
       return this.CHARTDATA
       // return {}
 
+    },
+    dat() {
+      return this.CREATIONPERMONTH[this.ACTIVECEH - 1]
     }
   },
   created() {

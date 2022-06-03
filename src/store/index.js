@@ -62,6 +62,14 @@ export const store = new Vuex.Store({
 			return state.step2
 		},
   },
-  mutations: {},
-  actions: {},
+	mutations: {
+		setActiveCeh (state, payload) {
+			state.activeсeh = payload
+		},
+	},
+	actions: {
+		updateActiveCeh ({ commit }, activeсeh) {
+			return commit('setActiveCeh', activeсeh)
+		}
+	},
 });

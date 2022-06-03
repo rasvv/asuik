@@ -9,7 +9,7 @@
 				<v-col cols="10" :style="HHEIGHT3">
 					<v-row>
 						<v-col cols="12" class="pa-10 ma-0">
-							<ChartLine />
+							<LineChart />
 						</v-col>
 					</v-row>
 				</v-col>
@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import ChartLine from './VueChartJS.vue';
+import LineChart from '@/components/Views/Charts/LineChart.vue';
 import Cehs from './Cehs.vue';
 import { mapGetters } from 'vuex'
 
 export default {
 	name: 'chart-summary',
 	components: {
-		ChartLine,
+		LineChart,
 		Cehs
 	},
 	computed: {

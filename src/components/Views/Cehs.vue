@@ -6,7 +6,8 @@
 			</v-col>
 		</v-row>
 		<v-row no-gutters v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]">
-			<v-col cols="12" class="cellstandart bordered" :style="n === ACTIVECEH ? [active, LINEHEIGHT] : LINEHEIGHT">
+			<v-col cols="12" class="cellstandart bordered" :style="n === ACTIVECEH ? [active, LINEHEIGHT] : LINEHEIGHT"
+				@click="onClick(n)">
 				{{ CREATION[n - 1].name }}
 			</v-col>
 		</v-row>
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
 	name: 'cehs-column',
@@ -29,6 +30,14 @@ export default {
 				fontWeight: "bold"
 			}
 		},
+	},
+	methods: {
+		...mapActions([
+			'updateActiveCeh'
+		]),
+		onClick(n) {
+			this.updateActiveCeh(n)
+		}
 	}
 }
 

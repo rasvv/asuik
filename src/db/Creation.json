@@ -40,7 +40,7 @@
 		"mrao": 0
 	},
 	{
-		"id": 4,
+		"id": 5,
 		"name": "ОЯБиН",
 		"normnao": 5,
 		"normsvao": 1,
@@ -50,7 +50,7 @@
 		"mrao": 0.55
 	},
 	{
-		"id": 5,
+		"id": 6,
 		"name": "РЦ-1",
 		"normnao": 174,
 		"normsvao": 104,
@@ -60,7 +60,7 @@
 		"mrao": 16.59
 	},
 	{
-		"id": 6,
+		"id": 7,
 		"name": "РЦ-2",
 		"normnao": 154,
 		"normsvao": 76,
@@ -70,7 +70,7 @@
 		"mrao": 113.9
 	},
 	{
-		"id": 7,
+		"id": 8,
 		"name": "СБ",
 		"normnao": 1,
 		"normsvao": 0,
@@ -80,7 +80,7 @@
 		"mrao": 0
 	},
 	{
-		"id": 8,
+		"id": 9,
 		"name": "ТАИ",
 		"normnao": 20,
 		"normsvao": 8,
@@ -90,7 +90,7 @@
 		"mrao": 4.83
 	},
 	{
-		"id": 9,
+		"id": 10,
 		"name": "ТЦ",
 		"normnao": 440,
 		"normsvao": 0,
@@ -100,7 +100,7 @@
 		"mrao": 19.2
 	},
 	{
-		"id": 10,
+		"id": 11,
 		"name": "ХЦ",
 		"normnao": 50,
 		"normsvao": 0,
@@ -110,7 +110,7 @@
 		"mrao": 21.4
 	},
 	{
-		"id": 11,
+		"id": 12,
 		"name": "ЦВ",
 		"normnao": 100,
 		"normsvao": 30,
@@ -120,7 +120,7 @@
 		"mrao": 24.11
 	},
 	{
-		"id": 12,
+		"id": 13,
 		"name": "ЦД",
 		"normnao": 95,
 		"normsvao": 2.75,
@@ -130,7 +130,7 @@
 		"mrao": 0
 	},
 	{
-		"id": 13,
+		"id": 14,
 		"name": "ЦОРО",
 		"normnao": 5,
 		"normsvao": 0,
@@ -140,7 +140,7 @@
 		"mrao": 137.11
 	},
 	{
-		"id": 14,
+		"id": 15,
 		"name": "ЦОС",
 		"normnao": 1,
 		"normsvao": 0,
@@ -150,7 +150,7 @@
 		"mrao": 0
 	},
 	{
-		"id": 15,
+		"id": 16,
 		"name": "ЦХООЯТ",
 		"normnao": 17,
 		"normsvao": 16,
@@ -160,7 +160,7 @@
 		"mrao": 0.2
 	},
 	{
-		"id": 16,
+		"id": 17,
 		"name": "ЦЦР",
 		"normnao": 15,
 		"normsvao": 0,
@@ -170,7 +170,7 @@
 		"mrao": 1.8
 	},
 	{
-		"id": 17,
+		"id": 18,
 		"name": "ЭЦ",
 		"normnao": 20,
 		"normsvao": 0,
