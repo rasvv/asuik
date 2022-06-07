@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 import creation from '@/db/creation.json';
 import hranenie from '@/db/hranenie.json';
 import creationPerMonth from "@/db/CreationPerMonth.json";
-import chartData from "@/db/ChartData.json";
+import lineChartData from "@/db/LineChartData.json";
 
 Vue.use(Vuex);
 
@@ -18,7 +18,7 @@ export const store = new Vuex.Store({
 
     creation: creation,
     hranenie: hranenie,
-    chartData: chartData,
+    lineChartData: lineChartData,
     creationPerMonth: creationPerMonth,
   },
   getters: {
@@ -46,8 +46,8 @@ export const store = new Vuex.Store({
 		HRANENIE: state => {
 			return state.hranenie
 		},
-		CHARTDATA: state => {
-			return state.chartData
+		LINECHARTDATA: state => {
+			return state.lineChartData
 		},
 		CREATIONPERMONTH: state => {
 			return state.creationPerMonth
