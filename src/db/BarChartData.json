@@ -1,0 +1,23 @@
+{
+	"labels": ["НАО", "САО", "ВАО", "МРАО"],
+	"datasets":[
+		{
+			"label": "Норма",
+			"backgroundColor": ["rgba(179,181,198,0.3)"],
+			"pointBackgroundColor": "rgba(179,181,198,1)",
+			"pointBorderColor": "#fff",
+			"pointHoverBackgroundColor": "#fff",
+			"pointHoverBorderColor": "rgba(179,181,198,1)",
+			"data": []
+		},
+		{
+			"label": "Образование",
+			"backgroundColor": "#1ce5ef",
+			"pointBackgroundColor": "#1ce5ef",
+			"pointBorderColor": "#fff",
+			"pointHoverBackgroundColor": "#fff",
+			"pointHoverBorderColor": "#1ce5ef",
+			"data": []
+		}
+	]
+}

@@ -6,11 +6,15 @@
 				<v-btn @click="changeForm('Hranenie')">Хранение</v-btn>
 				<v-btn @click="changeForm('CreationSummary')">Образование по цехам</v-btn>
 				<v-btn @click="changeForm('LineChartSummary')">Графики</v-btn>
-				<v-btn @click="changeForm('BarChartSummary')">Диаграммы</v-btn>
+				<v-btn @click="changeForm('PieChartSummary')">Диаграммы</v-btn>
+				<v-btn @click="changeForm('PolarChartSummary')">PolarAria</v-btn>
+				<v-btn @click="changeForm('BarChartSummary')">Bar</v-btn>
 			</v-row>
 			<Creation v-show="form === 'Creation'" />
 			<CreationSummary v-show="form === 'CreationSummary'" />
 			<LineChartSummary v-show="form === 'LineChartSummary'" />
+			<PieChartSummary v-show="form === 'PieChartSummary'" />
+			<PolarChartSummary v-show="form === 'PolarChartSummary'" />
 			<BarChartSummary v-show="form === 'BarChartSummary'" />
 			<Hranenie v-show="form === 'Hranenie'" />
 		</v-main>
@@ -24,6 +28,8 @@ import Creation from './components/Views/Creation.vue';
 import Hranenie from './components/Views/Hranenie.vue';
 import CreationSummary from './components/Views/CreationSummary.vue';
 import LineChartSummary from './components/Views/LineChartSummary.vue';
+import PieChartSummary from './components/Views/PieChartSummary.vue';
+import PolarChartSummary from './components/Views/PolarChartSummary.vue';
 import BarChartSummary from './components/Views/BarChartSummary.vue';
 
 export default {
@@ -34,6 +40,8 @@ export default {
 		Hranenie,
 		CreationSummary,
 		LineChartSummary,
+		PieChartSummary,
+		PolarChartSummary,
 		BarChartSummary
 	},
 

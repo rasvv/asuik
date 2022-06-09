@@ -1,34 +1,33 @@
 <template>
-	<Bar :chart-options="chartOptions" :chart-data="barData" :chart-id="chartId" :dataset-id-key="datasetIdKey"
+	<PolarArea :chart-options="chartOptions" :chart-data="polarData" :chart-id="chartId" :dataset-id-key="datasetIdKey"
 		:plugins="plugins" :css-classes="cssClasses" :styles="styles" :width="width" :height="height" />
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
-import { Bar } from 'vue-chartjs/legacy'
+import { PolarArea } from 'vue-chartjs/legacy'
 
 import {
 	Chart as ChartJS,
 	Title,
 	Tooltip,
 	Legend,
-	BarElement,
-	CategoryScale,
-	LinearScale
+	ArcElement,
+	RadialLinearScale
 } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(Title, Tooltip, Legend, ArcElement, RadialLinearScale)
 
 export default {
-	name: 'BarChart',
+	name: 'PolarAreaChart',
 	components: {
-		Bar
+		PolarArea
 	},
 	props: {
 		chartId: {
 			type: String,
-			default: 'bar-chart'
+			default: 'polar-chart'
 		},
 		datasetIdKey: {
 			type: String,
@@ -68,9 +67,9 @@ export default {
 	},
 	computed: {
 		...mapGetters([
-			'BARCHARTDATA', 'CREATION', 'ACTIVECEH'
+			'POLARCHARTDATA', 'CREATION', 'ACTIVECEH'
 		]),
-		barData() {
+		polarData() {
 			let arr = []
 			let nao = (this.CREATION[this.ACTIVECEH - 1].normnao / 2).toFixed(2)
 			arr.push(nao)
@@ -78,7 +77,7 @@ export default {
 			let svnao = (this.CREATION[this.ACTIVECEH - 1].normsvao / 2).toFixed(2)
 			arr.push(svnao)
 			arr.push(svnao)
-			this.barDataArr(0, arr)
+			this.polarDataArr(0, arr)
 
 			arr = []
 
@@ -86,13 +85,13 @@ export default {
 			arr.push(this.CREATION[this.ACTIVECEH - 1].sao)
 			arr.push(this.CREATION[this.ACTIVECEH - 1].vao)
 			arr.push(this.CREATION[this.ACTIVECEH - 1].mrao)
-			this.barDataArr(1, arr)
-			return this.BARCHARTDATA
+			this.polarDataArr(1, arr)
+			return this.POLARCHARTDATA
 		}
 	},
 	methods: {
-		barDataArr(i, arr) {
-			this.BARCHARTDATA.datasets[i].data = arr
+		polarDataArr(i, arr) {
+			this.POLARCHARTDATA.datasets[i].data = arr
 		}
 	},
 	mounted() {

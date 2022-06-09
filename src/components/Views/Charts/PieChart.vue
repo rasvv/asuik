@@ -1,34 +1,32 @@
 <template>
-	<Bar :chart-options="chartOptions" :chart-data="barData" :chart-id="chartId" :dataset-id-key="datasetIdKey"
+	<Pie :chart-options="chartOptions" :chart-data="pieData" :chart-id="chartId" :dataset-id-key="datasetIdKey"
 		:plugins="plugins" :css-classes="cssClasses" :styles="styles" :width="width" :height="height" />
 </template>
 
 <script>
+import { Pie } from 'vue-chartjs/legacy'
 import { mapGetters } from 'vuex'
-
-import { Bar } from 'vue-chartjs/legacy'
 
 import {
 	Chart as ChartJS,
 	Title,
 	Tooltip,
 	Legend,
-	BarElement,
-	CategoryScale,
-	LinearScale
+	ArcElement,
+	CategoryScale
 } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
 
 export default {
-	name: 'BarChart',
+	name: 'PieChart',
 	components: {
-		Bar
+		Pie
 	},
 	props: {
 		chartId: {
 			type: String,
-			default: 'bar-chart'
+			default: 'pie-chart'
 		},
 		datasetIdKey: {
 			type: String,
@@ -57,9 +55,6 @@ export default {
 	},
 	data() {
 		return {
-			chartData: {
-
-			},
 			chartOptions: {
 				responsive: true,
 				maintainAspectRatio: false
@@ -68,31 +63,23 @@ export default {
 	},
 	computed: {
 		...mapGetters([
-			'BARCHARTDATA', 'CREATION', 'ACTIVECEH'
+			'PIECHARTDATA', 'CREATION', 'ACTIVECEH'
 		]),
-		barData() {
+		pieData() {
 			let arr = []
-			let nao = (this.CREATION[this.ACTIVECEH - 1].normnao / 2).toFixed(2)
-			arr.push(nao)
-			arr.push(nao)
-			let svnao = (this.CREATION[this.ACTIVECEH - 1].normsvao / 2).toFixed(2)
-			arr.push(svnao)
-			arr.push(svnao)
-			this.barDataArr(0, arr)
-
-			arr = []
 
 			arr.push(this.CREATION[this.ACTIVECEH - 1].nao)
 			arr.push(this.CREATION[this.ACTIVECEH - 1].sao)
 			arr.push(this.CREATION[this.ACTIVECEH - 1].vao)
 			arr.push(this.CREATION[this.ACTIVECEH - 1].mrao)
-			this.barDataArr(1, arr)
-			return this.BARCHARTDATA
+
+			this.pieDataArr(arr)
+			return this.PIECHARTDATA
 		}
 	},
 	methods: {
-		barDataArr(i, arr) {
-			this.BARCHARTDATA.datasets[i].data = arr
+		pieDataArr(arr) {
+			this.PIECHARTDATA.datasets[0].data = arr
 		}
 	},
 	mounted() {
@@ -100,5 +87,3 @@ export default {
 	}
 }
 </script>
-
-
