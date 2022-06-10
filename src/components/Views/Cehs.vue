@@ -1,15 +1,14 @@
 <template>
 	<div>
 		<v-row no-gutters>
-			<v-col cols="12" class="cellstandart table__header captionstyle bordered" :style="HHEIGHT3">
+			<v-col cols="12" class="cellstandart table__header captionstyle bordered" :style="HHEIGHT2">
 				{{ title }}
 			</v-col>
 		</v-row>
 		<v-row no-gutters v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]">
-			<v-col cols="12" class="cellstandart bordered" :style="n === ACTIVECEH ? [active, LINEHEIGHT] : LINEHEIGHT"
-				@click="onClick(n)">
+			<v-btn style="width: 100%" :style="n === ACTIVECEH ? [active, lheight] : lheight" @click="onClick(n)">
 				{{ CREATION[n - 1].name }}
-			</v-col>
+			</v-btn>
 		</v-row>
 	</div>
 </template>
@@ -28,6 +27,14 @@ export default {
 			return {
 				backgroundColor: "#a1d8f5",
 				fontWeight: "bold"
+			}
+		},
+		lheight() {
+			return {
+				height: `${this.LINEHEIGHT}px`,
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center'
 			}
 		},
 	},

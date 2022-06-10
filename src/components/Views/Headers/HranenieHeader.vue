@@ -1,16 +1,16 @@
 <template>
 	<div class="table__header">
 		<v-row no-gutters>
-			<v-col cols="2" class="cellstandart captionstyle bordered" :style="HHEIGHT3">
+			<v-col cols="2" class="cellstandart captionstyle bordered" :style="HHEIGHT2">
 				Хранилище
 			</v-col>
-			<v-col cols="1" class="cellstandart captionstyle bordered" :style="HHEIGHT3">
+			<v-col cols="1" class="cellstandart captionstyle bordered" :style="HHEIGHT2">
 				Категория РАО
 			</v-col>
 			<v-col cols="4">
 				<v-row>
 					<v-col cols="12">
-						<v-col class="cellstandart subheader captionstyle bordered" :style="HHEIGHT2">
+						<v-col class="cellstandart subheader captionstyle bordered" :style="HHEIGHT1">
 							Проектный объем, м3
 						</v-col>
 
@@ -25,13 +25,13 @@
 					</v-col>
 				</v-row>
 			</v-col>
-			<v-col cols="1" class="cellstandart captionstyle bordered" :style="HHEIGHT3">
+			<v-col cols="1" class="cellstandart captionstyle bordered" :style="HHEIGHT2">
 				Размещено, м3
 			</v-col>
-			<v-col cols="3" class="cellstandart captionstyle bordered" :style="HHEIGHT3">
+			<v-col cols="3" class="cellstandart captionstyle bordered" :style="HHEIGHT2">
 				% заполнения
 			</v-col>
-			<v-col cols="1" class="cellstandart captionstyle bordered" :style="HHEIGHT3">
+			<v-col cols="1" class="cellstandart captionstyle bordered" :style="HHEIGHT2">
 				Свободный объем, м3
 			</v-col>
 

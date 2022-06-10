@@ -33,12 +33,6 @@ export default {
 		...mapGetters([
 			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATION', 'ACTIVECEH'
 		]),
-		active() {
-			return {
-				backgroundColor: "#a1d8f5",
-				fontWeight: "bold"
-			}
-		},
 	}
 }
 

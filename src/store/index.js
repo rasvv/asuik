@@ -13,8 +13,8 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    mainlineheight: 24,
-    lineheight: 16,
+    mainlineheight: 30,
+    lineheight: 32,
     step1: 60,
     step2: 80,
     activeсeh: 7,
@@ -29,7 +29,10 @@ export const store = new Vuex.Store({
   },
   getters: {
 		LINEHEIGHT: state => {
-			return (state.lineheight * 2).toFixed(0)
+			return state.lineheight
+		},
+		MAINLINEHEIGHT: state => {
+			return state.mainlineheight
 		},
 		HHEIGHT3: state => {
 			return {
@@ -81,10 +84,22 @@ export const store = new Vuex.Store({
 		setActiveCeh (state, payload) {
 			state.activeсeh = payload
 		},
+		setMainLineHeight (state, payload) {
+			state.mainlineheight = payload
+		},
+		setLineHeight (state, payload) {
+			state.lineheight = payload
+		},
 	},
 	actions: {
 		updateActiveCeh ({ commit }, activeсeh) {
 			return commit('setActiveCeh', activeсeh)
-		}
+		},
+		updateMainLineHeight ({ commit }, mainlineheight) {
+			return commit('setMainLineHeight', mainlineheight)
+		},
+		updateLineHeight ({ commit }, lineheight) {
+			return commit('setLineHeight', lineheight)
+		},
 	},
 });

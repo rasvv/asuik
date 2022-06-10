@@ -6,7 +6,7 @@
 				<v-col cols="2">
 					<Cehs title='ЦЕХ' />
 				</v-col>
-				<v-col cols="10" :style="HHEIGHT3">
+				<v-col cols="10">
 					<v-row>
 						<v-col cols="12">
 							<Creation_Header title="Год" />
@@ -49,12 +49,6 @@ export default {
 		...mapGetters([
 			'HHEIGHT1', 'HHEIGHT2', 'HHEIGHT3', 'LINEHEIGHT', 'CREATIONPERMONTH', 'ACTIVECEH'
 		]),
-		active() {
-			return {
-				backgroundColor: "#a1d8f5",
-				fontWeight: "bold"
-			}
-		},
 		dat() {
 			return this.CREATIONPERMONTH[this.ACTIVECEH - 1]
 		}

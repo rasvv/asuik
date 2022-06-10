@@ -6,7 +6,7 @@
 		<Hranenie_Line :hranenie="HRANENIE[0]" :rows="3" />
 		<Hranenie_Line :hranenie="HRANENIE[1]" :rows="2" />
 		<Hranenie_Line :hranenie="HRANENIE[2]" :rows="1" />
-		<div class="table__subline bordered" :style="HHEIGHT2">
+		<div class="table__subline bordered" :style="HHEIGHT1">
 			Временные хранилища
 		</div>
 		<Hranenie_Line v-for="n in [3, 4, 5, 6]" :key="n" :hranenie="HRANENIE[n]" :rows="1" />

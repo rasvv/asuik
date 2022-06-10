@@ -2,13 +2,32 @@
 	<v-app>
 		<v-main>
 			<v-row class="d-flex justify-center mt-2">
-				<v-btn @click="changeForm('Creation')">Образование</v-btn>
-				<v-btn @click="changeForm('Hranenie')">Хранение</v-btn>
-				<v-btn @click="changeForm('CreationSummary')">Образование по цехам</v-btn>
-				<v-btn @click="changeForm('LineChartSummary')">Графики</v-btn>
-				<v-btn @click="changeForm('PieChartSummary')">Диаграммы</v-btn>
-				<v-btn @click="changeForm('PolarChartSummary')">PolarAria</v-btn>
-				<v-btn @click="changeForm('BarChartSummary')">Bar</v-btn>
+				<v-col cols="1" class="px-2">
+					<v-text-field label="Заголовок" v-model="mainLineHeight" class="px-4" hide-details single-line type="number"
+						@click="changeMainLineHeight(mainLineHeight)">
+					</v-text-field>
+				</v-col>
+				<v-col cols="10" class="cellstandart">
+					<v-btn @click="changeForm('Creation')" :color="form === 'Creation' ? 'primary' : 'normal'">Образование</v-btn>
+					<v-btn @click="changeForm('Hranenie')" :color="form === 'Hranenie' ? 'primary' : 'normal'">Хранение</v-btn>
+					<v-btn @click="changeForm('CreationSummary')" :color="form === 'CreationSummary' ? 'primary' : 'normal'">
+						Образование по цехам
+					</v-btn>
+					<v-btn @click="changeForm('LineChartSummary')" :color="form === 'LineChartSummary' ? 'primary' : 'normal'">
+						Графики</v-btn>
+					<v-btn @click="changeForm('PieChartSummary')" :color="form === 'PieChartSummary' ? 'primary' : 'normal'">
+						Диаграммы</v-btn>
+					<v-btn @click="changeForm('PolarChartSummary')" :color="form === 'PolarChartSummary' ? 'primary' : 'normal'">
+						PolarAria</v-btn>
+					<v-btn @click="changeForm('BarChartSummary')" :color="form === 'BarChartSummary' ? 'primary' : 'normal'">Bar
+					</v-btn>
+				</v-col>
+
+				<v-col cols="1">
+					<v-text-field label="Строка" hint="Строка" v-model="lineHeight" class="px-4" hide-details single-line
+						type="number" @click="changeLineHeight(lineHeight)">
+					</v-text-field>
+				</v-col>
 			</v-row>
 			<Creation v-show="form === 'Creation'" />
 			<CreationSummary v-show="form === 'CreationSummary'" />
@@ -22,8 +41,8 @@
 </template>
 
 <script>
-// import Hranenie from './components/Hranenie.vue';
-// import { store } from './store';
+import { mapActions, mapGetters } from 'vuex'
+
 import Creation from './components/Views/Creation.vue';
 import Hranenie from './components/Views/Hranenie.vue';
 import CreationSummary from './components/Views/CreationSummary.vue';
@@ -47,13 +66,37 @@ export default {
 
 	data() {
 		return {
-			form: 'Creation'
+			form: 'Creation',
+			lineHeight: this.LINEHEIGHT,
+			mainLineHeight: this.MAINLINEHEIGHT
 		}
 	},
 	methods: {
+		...mapActions([
+			'updateLineHeight', 'updateMainLineHeight'
+		]),
 		changeForm(name) {
 			this.form = name
-		}
+		},
+		changeLineHeight(n) {
+			console.log(n);
+			this.updateLineHeight(n)
+		},
+		changeMainLineHeight(n) {
+			console.log(n);
+			this.updateMainLineHeight(n)
+		},
+
+
+	},
+	computed: {
+		...mapGetters([
+			'LINEHEIGHT', 'MAINLINEHEIGHT'
+		]),
+	},
+	mounted() {
+		this.lineHeight = this.LINEHEIGHT
+		this.mainLineHeight = this.MAINLINEHEIGHT
 	}
 };
 </script>

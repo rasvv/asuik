@@ -22,8 +22,7 @@
 							{{ creation.nao }}
 						</v-col>
 						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colnao[0] :height="LINEHEIGHT - 2"
-								:value=+this.colnao[1]>
+							<v-progress-linear class="mbb" :color=this.colnao[0] :height="LINEHEIGHT - 2" :value=+this.colnao[1]>
 								{{ pernao }}
 							</v-progress-linear>
 						</v-col>
@@ -34,8 +33,7 @@
 							{{ creation.vao }}
 						</v-col>
 						<v-col cols="2" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colsvao[0] :height="LINEHEIGHT - 2"
-								:value=+this.colsvao[1]>
+							<v-progress-linear class="mbb" :color=this.colsvao[0] :height="LINEHEIGHT - 2" :value=+this.colsvao[1]>
 								{{ persvao }}
 							</v-progress-linear>
 						</v-col>
@@ -43,8 +41,7 @@
 							{{ creation.mrao }}
 						</v-col>
 						<v-col cols="4" class="pa-0 ma-0 bordered" :style="lheight">
-							<v-progress-linear class="mbb" :color=this.colsum[0] :height="LINEHEIGHT - 2"
-								:value=this.colsum[1]>
+							<v-progress-linear class="mbb" :color=this.colsum[0] :height="LINEHEIGHT - 2" :value=this.colsum[1]>
 								{{ persum }}
 							</v-progress-linear>
 						</v-col>
@@ -108,12 +105,6 @@ export default {
 		},
 		colsum() {
 			return this.getColor(+this.persum)
-		},
-		active() {
-			return {
-				backgroundColor: "#a1d8f5",
-				fontWeight: "bold"
-			}
 		},
 	},
 }
