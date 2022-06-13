@@ -8,8 +8,8 @@
 					</v-text-field>
 				</v-col>
 				<v-col cols="10" class="cellstandart">
-					<v-btn @click="changeForm('Creation')" :color="form === 'Creation' ? 'primary' : 'normal'">Образование</v-btn>
 					<v-btn @click="changeForm('Hranenie')" :color="form === 'Hranenie' ? 'primary' : 'normal'">Хранение</v-btn>
+					<v-btn @click="changeForm('Creation')" :color="form === 'Creation' ? 'primary' : 'normal'">Образование</v-btn>
 					<v-btn @click="changeForm('CreationSummary')" :color="form === 'CreationSummary' ? 'primary' : 'normal'">
 						Образование по цехам
 					</v-btn>

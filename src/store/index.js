@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import creation from '@/db/creation.json';
-import hranenie from '@/db/hranenie.json';
+import creation from '@/db/Creation.json';
+import hranenie from '@/db/Hranenie.json';
 import creationPerMonth from "@/db/CreationPerMonth.json";
 import lineChartData from "@/db/LineChartData.json";
 import pieChartData from "@/db/PieChartData.json";
