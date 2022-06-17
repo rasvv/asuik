@@ -1,0 +1,160 @@
+[	
+	{
+	"id": 1,
+	"count": "3",
+	"checked": true,
+	"name": "ХТРО №1",
+	"description": "Хранилище твердых радиоактивных отходов №1",	
+	"opros": [{
+		"id": 1,
+		"pass": "123123",
+		"kon_zav": 12544,
+		"kon_reg": 874,
+		"section": 1,
+		"yarus": 1,
+		"cell": "1-Б-1",
+		"state": "norm"
+	},
+	{
+		"id": 2,
+		"pass": "45812",
+		"kon_zav": 12545,
+		"kon_reg": 876,
+		"section": 1,
+		"yarus": 2,
+		"cell": "2-А-2",
+		"state": "move"
+	},
+	{
+		"id": 3,
+		"pass": "1477",
+		"kon_zav": 12567,
+		"kon_reg": 877,
+		"section": 2,
+		"yarus": 3,
+		"cell": "3-А-3",
+		"state": "norm"
+	}]
+	},
+	{
+		"id": 2,
+		"count": "5",
+		"checked": true,
+		"name": "ХТРО №2",
+		"description": "Хранилище твердых радиоактивных отходов №2",	
+		"opros": [{
+			"id": 1,
+			"pass": "154223",
+			"kon_zav": 12680,
+			"kon_reg": 900,
+			"section": 1,
+			"yarus": 1,
+			"cell": "1-А-4",
+			"state": "notfind"
+		},
+		{
+			"id": 2,
+			"pass": "45778",
+			"kon_zav": 12700,
+			"kon_reg": 903,
+			"section": 1,
+			"yarus": 1,
+			"cell": "1-В-5",
+			"state": "error"
+		},
+		{
+			"id": 3,
+			"pass": "14523",
+			"kon_zav": 12704,
+			"kon_reg": 905,
+			"section": 1,
+			"yarus": 2,
+			"cell": "2-В-7",
+			"state": "notfind"
+		},
+		{
+			"id": 4,
+			"pass": "6577",
+			"kon_zav": 12706,
+			"kon_reg": 908,
+			"section": 1,
+			"yarus": 1,
+			"cell": "1-Б-9",
+			"state": "norm"
+		},		
+		{
+			"id": 5,
+			"pass": "3547",
+			"kon_zav": 12489,
+			"kon_reg": 910,
+			"section": 1,
+			"yarus": 3,
+			"cell": "3-В-6",
+			"state": "norm"
+		}]
+	},
+	{
+		"id": 3,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №3",
+		"description": "Хранилище твердых радиоактивных отходов №3",	
+		"opros": []
+	},
+	{
+		"id": 4,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №4",
+		"description": "Хранилище твердых радиоактивных отходов №4",	
+		"opros": []
+	},
+	{
+		"id": 5,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №5",
+		"description": "Хранилище твердых радиоактивных отходов №5",	
+		"opros": []
+	},
+	{
+		"id": 6,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №6",
+		"description": "Хранилище твердых радиоактивных отходов №6",	
+		"opros": []
+	},
+	{
+		"id": 7,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №7",
+		"description": "Хранилище твердых радиоактивных отходов №7",	
+		"opros": []
+	},
+	{
+		"id": 8,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №8",
+		"description": "Хранилище твердых радиоактивных отходов №8",	
+		"opros": []
+	},
+	{
+		"id": 9,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №9",
+		"description": "Хранилище твердых радиоактивных отходов №9",	
+		"opros": []
+	},
+	{
+		"id": 10,
+		"count": "0",
+		"checked": false,
+		"name": "ХТРО №10",
+		"description": "Хранилище твердых радиоактивных отходов №10",	
+		"opros": []
+	}
+]
