@@ -1,111 +1,50 @@
 <template>
-	<v-app>
-		<v-main>
-			<v-row class="d-flex justify-center mt-2">
-				<v-col cols="1" class="px-2">
-					<v-text-field label="Заголовок" v-model="mainLineHeight" class="px-4" hide-details single-line type="number"
-						@click="changeMainLineHeight(mainLineHeight)">
-					</v-text-field>
-				</v-col>
-				<v-col cols="10" class="cellstandart">
-					<v-btn @click="changeForm('Hranenie')" :color="form === 'Hranenie' ? 'primary' : 'normal'">Хранение</v-btn>
-					<v-btn @click="changeForm('Creation')" :color="form === 'Creation' ? 'primary' : 'normal'">Образование</v-btn>
-					<v-btn @click="changeForm('CreationSummary')" :color="form === 'CreationSummary' ? 'primary' : 'normal'">
-						Образование по цехам
-					</v-btn>
-					<v-btn @click="changeForm('LineChartSummary')" :color="form === 'LineChartSummary' ? 'primary' : 'normal'">
-						Графики</v-btn>
-					<v-btn @click="changeForm('PieChartSummary')" :color="form === 'PieChartSummary' ? 'primary' : 'normal'">
-						Диаграммы</v-btn>
-					<v-btn @click="changeForm('PolarChartSummary')" :color="form === 'PolarChartSummary' ? 'primary' : 'normal'">
-						PolarAria</v-btn>
-					<v-btn @click="changeForm('BarChartSummary')" :color="form === 'BarChartSummary' ? 'primary' : 'normal'">Bar
-					</v-btn>
-				</v-col>
+	<v-app
+    class="d-flex justify-center"
+  >
+    <Header />
+    <v-main>
+      <router-view />
+    </v-main>
+    <!-- <Footer /> -->
+  </v-app>
 
-				<v-col cols="1">
-					<v-text-field label="Строка" hint="Строка" v-model="lineHeight" class="px-4" hide-details single-line
-						type="number" @click="changeLineHeight(lineHeight)">
-					</v-text-field>
-				</v-col>
-			</v-row>
-			<Creation v-show="form === 'Creation'" />
-			<CreationSummary v-show="form === 'CreationSummary'" />
-			<LineChartSummary v-show="form === 'LineChartSummary'" />
-			<PieChartSummary v-show="form === 'PieChartSummary'" />
-			<PolarChartSummary v-show="form === 'PolarChartSummary'" />
-			<BarChartSummary v-show="form === 'BarChartSummary'" />
-			<Hranenie v-show="form === 'Hranenie'" />
-		</v-main>
-	</v-app>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
 
-import Creation from './components/Views/Creation.vue';
-import Hranenie from './components/Views/Hranenie.vue';
-import CreationSummary from './components/Views/CreationSummary.vue';
-import LineChartSummary from './components/Views/LineChartSummary.vue';
-import PieChartSummary from './components/Views/PieChartSummary.vue';
-import PolarChartSummary from './components/Views/PolarChartSummary.vue';
-import BarChartSummary from './components/Views/BarChartSummary.vue';
+import Header from './components/Header.vue'
 
 export default {
 	name: 'App',
 
 	components: {
-		Creation,
-		Hranenie,
-		CreationSummary,
-		LineChartSummary,
-		PieChartSummary,
-		PolarChartSummary,
-		BarChartSummary
+		Header
 	},
-
-	data() {
-		return {
-			form: 'Creation',
-			lineHeight: this.LINEHEIGHT,
-			mainLineHeight: this.MAINLINEHEIGHT
-		}
-	},
-	methods: {
-		...mapActions([
-			'updateLineHeight', 'updateMainLineHeight'
-		]),
-		changeForm(name) {
-			this.form = name
-		},
-		changeLineHeight(n) {
-			console.log(n);
-			this.updateLineHeight(n)
-		},
-		changeMainLineHeight(n) {
-			console.log(n);
-			this.updateMainLineHeight(n)
-		},
-
-
-	},
-	computed: {
-		...mapGetters([
-			'LINEHEIGHT', 'MAINLINEHEIGHT'
-		]),
-	},
-	mounted() {
-		this.lineHeight = this.LINEHEIGHT
-		this.mainLineHeight = this.MAINLINEHEIGHT
-	}
 };
 </script>
 
 <style>
+
+
 h3 {
 	margin: 40px 0 0;
 	text-align: center;
 	margin-bottom: 20px;
+}
+
+.h40 {
+  height: 60vh;
+}
+
+.h40p {
+  height: calc(60vh - 125px);
+  overflow-y: auto;
+}
+
+.scrolled {
+	max-height: 60vh;
+	overflow-y: auto;
 }
 
 .table__header {
@@ -152,6 +91,44 @@ h3 {
 .bordered {
 	border: 1px solid #ddd;
 	/* height: calc(var(--main-line-height) * 3); */
+}
+
+.v-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #035ea1;
+    background: transparent;
+    border-radius: 4px;
+    font-family: Roboto,serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 4px;
+    border: 1px solid #035ea1;
+    cursor: pointer;	
+}
+
+.border {
+	border: 1px solid #8ca6b9;
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 0 0 3px #035ea1;
+	/* height: calc(var(--main-line-height) * 3); */
+}
+
+fieldset {
+	width: 100%;
+  /* border: 1px solid #5c97c2; */
+  /* Чтобы подстраивался под контент */
+  display: inline-block;
+}
+
+legend {
+  color: #339dc7;
+	font-style: italic;
 }
 
 .table__border {

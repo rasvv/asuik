@@ -5,7 +5,7 @@
 				{{ title }}
 			</v-col>
 		</v-row>
-		<v-row no-gutters v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]">
+		<v-row no-gutters v-for="n in CREATION.length - 1" :key="n">
 			<v-btn style="width: 100%" :color="n === ACTIVECEH ? 'primary' : 'normal'" :style="lheight" @click="onClick(n)">
 				{{ CREATION[n - 1].name }}
 			</v-btn>

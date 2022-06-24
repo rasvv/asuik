@@ -2,7 +2,9 @@
 	<div>
 		<h3>Статистика образования РАО по цехам</h3>
 		<Creation_Header title="Цех" />
-		<Creation_line v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]" />
+		<div class="scrolled">
+			<Creation_line v-for="n in CREATION.length - 1" :key="n" :creation="CREATION[n - 1]" />
+		</div>
 		<div class="table__subline bordered" :style="HHEIGHT1">
 			ИТОГО по АЭС
 		</div>
@@ -32,4 +34,5 @@ export default {
 </script>
 
 <style>
+
 </style>

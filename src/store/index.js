@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 
 import creation from '@/db/Creation.json';
 import hranenie from '@/db/Hranenie.json';
+import hranenieopros from '@/db/Hranenie_opros.json';
 import creationPerMonth from "@/db/CreationPerMonth.json";
 import lineChartData from "@/db/LineChartData.json";
 import pieChartData from "@/db/PieChartData.json";
@@ -21,6 +22,7 @@ export const store = new Vuex.Store({
 
     creation: creation,
     hranenie: hranenie,
+    hranenieopros: hranenieopros,
     lineChartData: lineChartData,
     pieChartData: pieChartData,
     polarChartData: polarChartData,
@@ -54,6 +56,9 @@ export const store = new Vuex.Store({
 		},
 		HRANENIE: state => {
 			return state.hranenie
+		},
+		HRANENIEOPROS: state => {
+			return state.hranenieopros
 		},
 		LINECHARTDATA: state => {
 			return state.lineChartData
