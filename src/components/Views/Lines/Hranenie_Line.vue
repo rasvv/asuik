@@ -148,6 +148,9 @@ export default {
 		per3() {
 			return this.percent(this.hranenie.category[2].proect, this.hranenie.category[2].put)
 		},
+		// col(id) {
+		// 	return this.getColor(this.per(id))
+		// },
 		col1() {
 			return this.getColor(+this.per1)
 		},

@@ -11,7 +11,9 @@
 
 </template>
 
+
 <script>
+// <link href = "@/assets/Fonts/PTRootUI.css" rel = "stylesheet" type = "text/css" />
 
 import Header from './components/Header.vue'
 
@@ -26,6 +28,12 @@ export default {
 
 <style>
 
+* {
+    font-family: Roboto,serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;	
+}
 
 h3 {
 	margin: 40px 0 0;
@@ -101,10 +109,6 @@ h3 {
     color: #035ea1;
     background: transparent;
     border-radius: 4px;
-    font-family: Roboto,serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
     line-height: 24px;
     padding: 8px 4px;
     border: 1px solid #035ea1;

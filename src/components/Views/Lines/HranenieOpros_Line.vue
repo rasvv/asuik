@@ -49,17 +49,6 @@ export default {
 	name: 'hranenie-opros-line',
 	props: ['hranenieopros', 'name'],
 	methods: {
-		percent(val1, val2) {
-			return ((100 * val2 / val1).toFixed(2))
-		},
-		getPath() {
-			return ("hranenieopros[1].state")
-		},
-		getColor(val) {
-			if (+val < this.STEP1) { return ["green", +val] }
-			else if (+val < this.STEP2) { return ["yellow", +val] }
-			else { return ["red", (+val > 100) ? 100 : +val] }
-		},
 		getSize() {
 			return this.LINEHEIGHT - 4
 		}
@@ -75,41 +64,6 @@ export default {
 				justifyContent: 'center',
 				alignItems: 'center'
 			}
-		},
-		bheight() {
-			return {
-				height: `${this.LINEHEIGHT * this.rows}px`,
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}
-		},
-		per1() {
-			return this.percent(this.hranenie.category[0].proect, this.hranenie.category[0].put)
-		},
-		per2() {
-			return this.percent(this.hranenie.category[1].proect, this.hranenie.category[1].put)
-		},
-		per3() {
-			return this.percent(this.hranenie.category[2].proect, this.hranenie.category[2].put)
-		},
-		col1() {
-			return this.getColor(+this.per1)
-		},
-		col2() {
-			return this.getColor(+this.per2)
-		},
-		col3() {
-			return this.getColor(+this.per3)
-		},
-		raz1() {
-			return (this.hranenie.category[0].proect - this.hranenie.category[0].put).toFixed(2)
-		},
-		raz2() {
-			return (this.hranenie.category[1].proect - this.hranenie.category[1].put).toFixed(2)
-		},
-		raz3() {
-			return (this.hranenie.category[2].proect - this.hranenie.category[2].put).toFixed(2)
 		},
 	}
 }

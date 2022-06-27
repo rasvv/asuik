@@ -51,14 +51,11 @@
                       <HranenieOpros_Line :hranenieopros="HRANENIEOPROS[selected[n-1]].opros" :name="HRANENIEOPROS[selected[n-1]].name" />
                     </div>                    
                   </div>
-
-
-
-
-                  <!-- <HranenieOpros_Line :hranenieopros="HRANENIEOPROS[0].opros" :name="HRANENIEOPROS[0].name" />
-                  <HranenieOpros_Line :hranenieopros="HRANENIEOPROS[1].opros" :name="HRANENIEOPROS[1].name"  /> -->
                 </v-col>
               </v-row>
+							<v-row no-gutters>
+								Количество учетных единиц: {{ count }}
+							</v-row>
             </fieldset>            
           </v-row>
 
@@ -133,9 +130,16 @@ export default {
   },
   data() {
     return {
+			count: 0
     };
   },
   methods: {
+		countsum(count) {
+			this.count += +count
+		},
+		countclear() {
+			this.count = 0
+		}
   },
   computed: {
     ...mapGetters([
@@ -143,10 +147,14 @@ export default {
     ]),
     selected() {
       let select = []
+			this.countclear()
       this.HRANENIEOPROS.map(item => {
-        if (item.checked) select.push(item.id - 1)
+        if (item.checked) 
+				{
+					select.push(item.id - 1)
+					this.countsum(item.count)
+				}
       })
-      // console.log(select);
       return select
     }
   }
