@@ -15,6 +15,7 @@
 				<v-btn color="primary" depressed :ripple="false" to="/HranenieOpros">Опрос ПХ</v-btn>	
 				<v-btn color="primary" depressed :ripple="false" to="/Creation">Образование</v-btn>	
 				<v-btn color="primary" depressed :ripple="false" to="/CreationSummary">Образование по цехам</v-btn>	
+				<v-btn color="primary" depressed :ripple="false" to="/Charts">Charts</v-btn>	
 				<v-btn color="primary" depressed :ripple="false" to="/LineChartSummary">LineChart</v-btn>	
 				<v-btn color="primary" depressed :ripple="false" to="/PieChartSummary">PieChart</v-btn>	
 				<v-btn color="primary" depressed :ripple="false" to="/PolarChartSummary">PolarChart</v-btn>	

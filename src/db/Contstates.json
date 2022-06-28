@@ -1,0 +1,27 @@
+[
+	{
+		"state": "norm",
+		"img": "assets/icons/norm.jpg",
+		"description": "Норма"
+	},
+	{
+		"state": "move",
+		"img": "assets/icons/move.jpg",
+		"description": "Контейнер перемещен"
+	},
+	{
+		"state": "notfind",
+		"img": "assets/icons/notfind.jpg",
+		"description": "Метка не найдена"
+	},
+	{
+		"state": "error",
+		"img": "assets/icons/error.jpg",
+		"description": "Метка удалена"
+	},
+	{
+		"state": "battery",
+		"img": "assets/icons/battery.jpg",
+		"description": "Батарея разрядилась"
+	}
+]

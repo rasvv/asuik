@@ -28,14 +28,21 @@
 					</v-col>
 				</v-col>				
 				<v-col cols="2" class="cellstandart bordered">
-					<v-img class="rounded-lg"
-						:src="require(`@/assets/icons/${hranenieopros[n-1].state}.jpg`)"
-						position="center center"
-						:max-height=getSize()
-						:max-width=getSize()
-						alt="logo"
-						contain
-					> </v-img>					
+					<v-tooltip top>
+						<template v-slot:activator="{ on, attrs }">
+							<v-img class="rounded-lg"
+								:src="require(`@/assets/icons/${hranenieopros[n-1].state}.jpg`)"
+								position="center center"
+								:max-height=getSize()
+								:max-width=getSize()
+								alt="logo"
+								contain
+								v-bind="attrs"
+								v-on="on"								
+							> </v-img>					
+						</template>
+						<span>{{getDesc(hranenieopros[n-1].state)}}</span>
+					</v-tooltip>
 				</v-col>
 			</v-row>
 		</div>
@@ -51,11 +58,14 @@ export default {
 	methods: {
 		getSize() {
 			return this.LINEHEIGHT - 4
+		},
+		getDesc(state) {
+			return this.CONTSTATES.find(item => item.state === state).description
 		}
 	},
 	computed: {
 		...mapGetters([
-			'STEP1', 'STEP2', 'LINEHEIGHT', 'HHEIGHT1'
+			'STEP1', 'STEP2', 'LINEHEIGHT', 'HHEIGHT1', 'CONTSTATES'
 		]),
 		lheight() {
 			return {

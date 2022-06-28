@@ -9,6 +9,7 @@ import lineChartData from "@/db/LineChartData.json";
 import pieChartData from "@/db/PieChartData.json";
 import polarChartData from "@/db/PolarChartData.json";
 import barChartData from "@/db/BarChartData.json";
+import contstates from "@/db/Contstates.json";
 
 Vue.use(Vuex);
 
@@ -28,6 +29,7 @@ export const store = new Vuex.Store({
     polarChartData: polarChartData,
     barChartData: barChartData,
     creationPerMonth: creationPerMonth,
+    contstates: contstates,
   },
   getters: {
 		LINEHEIGHT: state => {
@@ -74,6 +76,9 @@ export const store = new Vuex.Store({
 		},
 		CREATIONPERMONTH: state => {
 			return state.creationPerMonth
+		},
+		CONTSTATES: state => {
+			return state.contstates
 		},
     ACTIVECEH: state => {
 			return state.activeсeh

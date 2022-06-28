@@ -34,6 +34,11 @@ const router = new Router({
       component: () => import('../components/Views/CreationSummary.vue')
 		},
 		{
+      path: '/Charts',
+      name: 'Charts',
+      component: () => import('../components/Views/Charts.vue')
+		},
+		{
       path: '/LineChartSummary',
       name: 'LineChartSummary',
       component: () => import('../components/Views/LineChartSummary.vue')
