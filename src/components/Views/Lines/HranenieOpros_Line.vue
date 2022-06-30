@@ -31,7 +31,7 @@
 					<v-tooltip top>
 						<template v-slot:activator="{ on, attrs }">
 							<v-img class="rounded-lg"
-								:src="require(`@/assets/icons/${hranenieopros[n-1].state}.jpg`)"
+								:src="require(`@/${getImg(hranenieopros[n-1].state)}`)"
 								position="center center"
 								:max-height=getSize()
 								:max-width=getSize()
@@ -61,6 +61,9 @@ export default {
 		},
 		getDesc(state) {
 			return this.CONTSTATES.find(item => item.state === state).description
+		},
+		getImg(state) {
+			return this.CONTSTATES.find(item => item.state === state).img
 		}
 	},
 	computed: {
